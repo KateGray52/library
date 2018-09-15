@@ -6,60 +6,118 @@
 
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link href="style.css" rel="stylesheet" type="text/css" media="all"/>
+  <!-- <link href="style.css" rel="stylesheet" type="text/css" media="all"/> -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 </head>
-
 <body>
 
 
+<div id="page-wrapper">
 
-<div>
+  <!-- Header -->
+    <div id="header-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
 
-    <input id="searchBooks" name="searchBooks" type="text" value="python"/>
+            <header id="header">
+              <h1><a href="index.html" id="logo">My Library</a></h1>
+              <nav id="nav">
+                <a href="index.html">Home</a>
 
-    <button type="button" value="submit" id="buttonForSearch" >Submit</button>
+              </nav>
+            </header>
 
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  <div id="main">
+    <div class="container">
+      <div class="row main-row">
+        <div class="col-4 col-12-medium">
+          <section>
+            <h2>Search</h2>
+
+            <div class="col-6 col-12-small">
+                <input id="searchBooks" name="searchBooks" type="text" value="python"/>
+                <button type="button" value="submit" id="buttonForSearch" >Submit</button>
+            </div>
+
+            <ul class="small-image-list" id="sideList">
+              <li>
+                <a href="#"><img src="images/pic2.jpg" alt="" class="left" /></a>
+                <h4>Jane Anderson</h4>
+                <p>Varius nibh.</p>
+              </li>
+            </ul>
+              <!-- <table class="table" id="tableId">
+                    <thead>
+                      <tr>
+                        <th>Picture</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Button</th>
+                          </tr>
+                      </thead>
+                        <tbody>
+                        </tbody>
+                    </table> -->
+          </section>
+          <!-- end of left Column -->
+        </div>
+
+          <div class="col-8 col-12-medium imp-medium">
+            <section>
+              <h2>Library List</h2>
+              <div id="myBookList" class="displayBookList">
+
+              </div>
+
+
+            </section>
+          </div>
+
+        <!-- end ofrow main-row -->
+      </div>
+      <!-- end of container -->
+    </div>
+  </div>
 </div>
 
-<div class="row">
+
+<!-- <div class="row">
   <div class="col-xs-10 col-sm-10 col-md-10">
     <div class="table-responsive">
       <table class="table table-bordered table-hover table-striped" id="tableId">
-              <thead>
-                  <tr>
-                    <th>Picture</th>
-                      <th>Title</th>
-                      <th>Author</th>
-                      <th>Button</th>
-                      </tr>
-                    </thead>
-
-                      <tbody>
-                      
-                        </tbody>
-                  </table>
-              </div>
-                      <!-- /.table-responsive -->
-                  </div>
-              </div>
-
-
+            <thead>
+              <tr>
+                <th>Picture</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Button</th>
+                  </tr>
+              </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+      </div>
+    </div> -->
 
 
 
 
 
 <script src="test.js"></script>
-
-<!-- <div class="booksSearchDisplay">
-
-</div> -->
-
-
-
-
   <!-- <script src="script.js"></script> -->
 
 	</body>

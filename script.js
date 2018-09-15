@@ -7,6 +7,7 @@ $(document).ready(function() {
     var searchInput  = $("#searchBooks").val();
     var numberResponse = "6";
     var bookApiSearch ="https://www.googleapis.com/books/v1/volumes?q=" + searchInput + "&maxResults=" + numberResponse;
+    console.log(bookApiSearch);
     sendRquest(bookApiSearch)
     });
 
@@ -36,41 +37,60 @@ $(document).ready(function() {
 
     function addDiv(author, bookTitle, bookImg, index) {
 
-    var tableRef = document.getElementById('tableId').getElementsByTagName('tbody')[0];
-  // Insert a row in the table at the last row
-    var newRow   = tableRef.insertRow(tableRef.rows.length);
-  // Insert a cell in the row at index 0
-    var newImgRow  = newRow.insertCell(0);
-    var newTitleRow  = newRow.insertCell(1);
-    var newAuthorRow  = newRow.insertCell(2);
-    var newBtnRow  = newRow.insertCell(3);
-    //make and set button for table
-    var newSelectBtn = document.createElement("BUTTON");
+      var ListRef = document.getElementById('sideList')
+      var node=document.createElement("LI");
 
-    newSelectBtn.addEventListener("click", function() {
-    console.log("clicked");
-    document.getElementById('tableId').deleteRow(this.parentNode.parentNode.rowIndex)
-    });
-    var newselect = document.createTextNode("select");
-    newSelectBtn.appendChild(newselect);
-    document.body.appendChild(newSelectBtn);
+      // book and author nodes
+      var bookpara = document.createElement("p");
+      var authorpara = document.createElement("p");
+      var booknode=document.createTextNode(bookTitle);
+      var authornode=document.createTextNode(author);
+      bookpara.appendChild(booknode);
+      authorpara.appendChild(authornode);
 
-  //make image for table list
-    var imgForList = document.createElement("IMG");
-    imgForList.setAttribute('src', bookImg);
-    imgForList.setAttribute('id', 'imageId' + index);
-    var imDiv = document.createTextNode("img");
-    imgForList.appendChild(imDiv);
-    document.body.appendChild(imgForList);
 
-    //append elements to table
-    newImgRow.appendChild(imgForList);
-    newTitleRow.appendChild(document.createTextNode(bookTitle));
-    newAuthorRow.appendChild(document.createTextNode(author));
-    newBtnRow.appendChild(newSelectBtn);
+      //make image for table list
+      var imgForList = document.createElement("IMG");
+      imgForList.setAttribute('src', bookImg);
+      imgForList.setAttribute('class', 'left');
+      imgForList.setAttribute('id', 'imageId' + index);
+      var imDiv = document.createTextNode("img");
+      imgForList.appendChild(imDiv);
+      document.body.appendChild(imgForList);
+
+
+      var newSelectBtn = document.createElement("BUTTON");
+      newSelectBtn.addEventListener("click", function(){
+      console.log(this.parentNode.parentNode)
+      });
+      var newselectnode = document.createTextNode("select");
+      newSelectBtn.appendChild(newselectnode);
+      document.body.appendChild(newSelectBtn);
+
+      var newDivWrapper = document.createElement('li');
+      newDivWrapper.id = 'container'+index;
+      newDivWrapper.appendChild(imgForList);
+      newDivWrapper.appendChild(bookpara);
+      newDivWrapper.appendChild(authorpara);
+      newDivWrapper.appendChild(newSelectBtn);
+
+      node.appendChild(newDivWrapper);
+      ListRef.appendChild(newDivWrapper);
 
   };
+  // button.addEventListener ("click", function() {
+  // console.log("did something");
+  // });
+  // function newButtonClickListener() {
+  //
+  //     console.log("Hello World");
+  //   };
+
+   //  $( ".listSelect" ).click(function() {
+   // console.log("Hello World");
+   // });
+
+
 
 //end of document ready
 });
-ld(img);
