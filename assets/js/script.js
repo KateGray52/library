@@ -4,7 +4,7 @@ $(document).ready(function() {
 
   $("#buttonForSearch").click(function () {
     var searchInput  = $("#searchBooks").val();
-    var numberResponse = "2";
+    var numberResponse = "6";
     var bookApiSearch ="https://www.googleapis.com/books/v1/volumes?q=" + searchInput + "&maxResults=" + numberResponse;
     console.log(bookApiSearch);
     sendRquest(bookApiSearch)
