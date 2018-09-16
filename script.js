@@ -2,7 +2,6 @@ console.log("connected");
 
 $(document).ready(function() {
 
-
   $("#buttonForSearch").click(function () {
     var searchInput  = $("#searchBooks").val();
     var numberResponse = "2";
@@ -23,7 +22,7 @@ $(document).ready(function() {
           $.each(responsetext, function (index, value) {
             var bookTitle = responsetext[index].volumeInfo.title;
             var bookAuthor = responsetext[index].volumeInfo.authors;
-            var bookSrc = responsetext[index].volumeInfo.imageLinks.smallThumbnail;
+            var bookSrc = responsetext[index].volumeInfo.imageLinks.thumbnail;
           addDiv(bookAuthor, bookTitle, bookSrc, index);
           //end of response loop
             });
@@ -32,7 +31,6 @@ $(document).ready(function() {
         //end of ajax
         });
       };
-
 
 
     function addDiv(author, bookTitle, bookImg, index) {
@@ -62,20 +60,13 @@ $(document).ready(function() {
       var newSelectBtn = document.createElement("BUTTON");
       newSelectBtn.addEventListener("click", function(){
         var el = $(this);
-        console.log("el test", el);
-        console.log((el).parent().closest('div'));
-        var parentDiv = ($(el).parent().closest('div'));
-        console.log("parent div test", parentDiv);
 
-        var imgsibling = (el).siblings('.picClass');
-        var psibling = (el).siblings('p');
-        console.log("img siblings test", imgsibling);
-        console.log("psiblings test", psibling);
+        var imgsibling = (el).siblings('img');
 
         var GalleryDiv = document.getElementById('bookImgMain');
         var newDivImg = document.createElement('div');
         newDivImg.setAttribute('class', "media");
-        var clonedImg = $(imgsibling).clone().removeClass('.picClass');
+        var clonedImg =(imgsibling).clone().removeClass().addClass('imgClassForGallery');
         console.log("testing clone 1", clonedImg);
         document.body.append(clonedImg);
         console.log("testing clone 2", clonedImg);
@@ -83,8 +74,6 @@ $(document).ready(function() {
         console.log("testing newDivimg", newDivImg);
 
         $(GalleryDiv).append(newDivImg);
-
-
 
       });
 
@@ -94,6 +83,7 @@ $(document).ready(function() {
 
       var newDivWrapper = document.createElement('div');
       newDivWrapper.id = 'container'+index;
+      // newDivWrapper.class = 'columns';
       newDivWrapper.appendChild(imgForList);
       newDivWrapper.appendChild(bookpara);
       newDivWrapper.appendChild(authorpara);
@@ -103,18 +93,6 @@ $(document).ready(function() {
       ListRef.appendChild(newDivWrapper);
 
   };
-  // button.addEventListener ("click", function() {
-  // console.log("did something");
-  // });
-  // function newButtonClickListener() {
-  //
-  //     console.log("Hello World");
-  //   };
-
-   //  $( ".listSelect" ).click(function() {
-   // console.log("Hello World");
-   // });
-
 
 
 //end of document ready
