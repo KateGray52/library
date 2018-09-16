@@ -5,7 +5,7 @@ $(document).ready(function() {
 
   $("#buttonForSearch").click(function () {
     var searchInput  = $("#searchBooks").val();
-    var numberResponse = "6";
+    var numberResponse = "2";
     var bookApiSearch ="https://www.googleapis.com/books/v1/volumes?q=" + searchInput + "&maxResults=" + numberResponse;
     console.log(bookApiSearch);
     sendRquest(bookApiSearch)
@@ -52,8 +52,8 @@ $(document).ready(function() {
       //make image for table list
       var imgForList = document.createElement("IMG");
       imgForList.setAttribute('src', bookImg);
-      imgForList.setAttribute('class', 'left');
-      imgForList.setAttribute('id', 'imageId' + index);
+      imgForList.setAttribute('class', 'picClass');
+      // imgForList.setAttribute('id', 'imageId' + index);
       var imDiv = document.createTextNode("img");
       imgForList.appendChild(imDiv);
       document.body.appendChild(imgForList);
@@ -61,13 +61,38 @@ $(document).ready(function() {
 
       var newSelectBtn = document.createElement("BUTTON");
       newSelectBtn.addEventListener("click", function(){
-      console.log(this.parentNode.parentNode)
+        var el = $(this);
+        console.log("el test", el);
+        console.log((el).parent().closest('div'));
+        var parentDiv = ($(el).parent().closest('div'));
+        console.log("parent div test", parentDiv);
+
+        var imgsibling = (el).siblings('.picClass');
+        var psibling = (el).siblings('p');
+        console.log("img siblings test", imgsibling);
+        console.log("psiblings test", psibling);
+
+        var GalleryDiv = document.getElementById('bookImgMain');
+        var newDivImg = document.createElement('div');
+        newDivImg.setAttribute('class', "media");
+        var clonedImg = $(imgsibling).clone().removeClass('.picClass');
+        console.log("testing clone 1", clonedImg);
+        document.body.append(clonedImg);
+        console.log("testing clone 2", clonedImg);
+        $(clonedImg).appendTo(newDivImg);
+        console.log("testing newDivimg", newDivImg);
+
+        $(GalleryDiv).append(newDivImg);
+
+
+
       });
+
       var newselectnode = document.createTextNode("select");
       newSelectBtn.appendChild(newselectnode);
       document.body.appendChild(newSelectBtn);
 
-      var newDivWrapper = document.createElement('li');
+      var newDivWrapper = document.createElement('div');
       newDivWrapper.id = 'container'+index;
       newDivWrapper.appendChild(imgForList);
       newDivWrapper.appendChild(bookpara);
