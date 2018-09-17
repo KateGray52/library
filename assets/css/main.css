@@ -26,7 +26,7 @@
 		line-height: 1;
 	}
 
-	#sectionfix{
+	/* #sectionfix{
 	margin: 1rem;
 	}
 		#searchBooks
@@ -35,9 +35,24 @@
 		display: flex;
 		flex-wrap: wrap;
 		margin-top: 1rem;
+	} */
+
+	/* .exampleImg {
+    position: relative;
+    height: 300px;
+    width: 300px;
+} */
+
+	.picClass {
+		float: left;
 	}
 
+	.exampleImg img {
+		opacity: 0.5;
+		position: absolute;
+		bottom: 0;
 
+	}
 
 
 	ol, ul {
@@ -858,7 +873,10 @@
 				overflow: hidden;
 				opacity: 0;
 				position: relative;
-				width: 25%;
+				/* width: 25%; */
+				height: 200px;
+				width: 150px;
+
 			}
 
 				.gallery .content .media a {
@@ -1505,7 +1523,7 @@ float: right;
 padding: 6px 10px;
 /* margin-top: 8px;
 margin-right: 16px; */
-background: #ddd;
+background: #818181;
 font-size: 17px;
 border: none;
 cursor: pointer;
@@ -1525,20 +1543,20 @@ cursor: pointer;
     transition: 0.4s;
 }
 
-.active, .accordion:hover {
+/* .active, .accordion:hover {
     background-color: #ccc;
-}
+} */
 
 .panel {
     padding: 0 18px;
     display: none;
-    background-color: white;
+    /* background-color: white; */
     overflow: hidden;
 }
 
 .vertical-menu {
     /* width: 200px; */
-    height: 150px;
+    height: 400px;
     overflow-y: auto;
 }
 
@@ -1731,6 +1749,7 @@ cursor: pointer;
 	#main {
 		background: #f1f1f1;
 		width: 100%;
+		margin-left: 5%;
 	}
 
 		#main #header {

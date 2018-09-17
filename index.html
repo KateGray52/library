@@ -28,33 +28,22 @@
 
 					<li id="searchSideNav" class="openBtn">
 						<a class="accordion">Search</a>
-						<div class="panel">
+						<div class="panel" id="searchPanel">
 
-						<div class=search-container>
+						<div class=search-container style="background: white;">
 							<input type="text" placeholder="Search.."
-							id="searchBooks" class="input" name="searchBooks" value="python">
+							id="searchBooks" class="input" name="searchBooks" >
 							<button type="button" id="buttonForSearch"><i class="fa fa-search" ></i></button>
 						</div>
 
 						 <div class="vertical-menu">
-							 <a href="#" class="active">Home</a>
+							 <a href="#" class="active" style="background: slategray;">Results</a>
 
-							 <div id="sideList">
+							 <div id="sideList" style=" background: white; padding: 5px; ">
  							</div>
-
-
-			<!-- <a href="#">Link 1</a>
-			<a href="#">Link 2</a>
-			<a href="#">Link 3</a>
-			<a href="#">Link 4</a> -->
 
 						</div>
 					</div>
-
-
-
-					<!-- <div id="sideList" class="flex-container">
-					</div> -->
 
 				</li>
 
@@ -65,7 +54,11 @@
 			<!-- Main -->
 				<section id="main">
 
-					<!-- <span id="openBtn" style="font-size:30px;cursor:pointer">Open</span> -->
+					<!-- Header -->
+						<header id="header">
+							<div>Digital Library</div>
+						</header>
+
 
 					<!-- Banner -->
 						<!-- <section id="banner">
@@ -82,17 +75,35 @@
 
 							<!-- Photo Galleries -->
 								<div class="gallery">
-									<header class="special">
+									<!-- <header class="special">
 										<h2>What's Next</h2>
+									</header> -->
+									<header>
+										<h1>Bookcase</h1>
+										<ul class="tabs">
+											<li><a href="#" data-tag="all" class="button active">All</a></li>
+											<li><a href="#" data-tag="people" class="button">Science Fiction</a></li>
+											<li><a href="#" data-tag="place" class="button">Biography</a></li>
+											<li><a href="#" data-tag="thing" class="button">Programming</a></li>
 
-
+										</ul>
 									</header>
 									<div class="content" id="bookImgMain">
-										<div class="media">
+										<!-- <div class="media">
 											<a href="images/fulls/01.jpg"><img src="images/thumbs/01.jpg" alt="" title="This right here is a caption." /></a>
+										</div> -->
+										<div class="media exampleImg">
+											<a href="images/fulls/01.jpg"><img src="images/books/book2.jpg" alt="" title="This right here is a caption." /></a>
 										</div>
-										<div class="media">
-											<a href="images/fulls/05.jpg"><img src="images/books/pythonbook.jpg" alt="" title="This right here is a caption." /></a>
+										<div class="media exampleImg">
+											<a href="images/fulls/01.jpg"><img src="images/books/css1.jpg" alt="" title="This right here is a caption." /></a>
+										</div>
+										<div class="media exampleImg">
+											<a href="images/fulls/05.jpg"><img src="images/books/js1.jpg" alt="" title="This right here is a caption." /></a>
+										</div>
+
+										<div class="media exampleImg">
+											<a href="images/fulls/05.jpg"><img src="images/books/book1.jpg" alt="" title="This right here is a caption." /></a>
 										</div>
 									</div>
 									<footer>

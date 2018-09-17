@@ -25,11 +25,20 @@ $(document).ready(function() {
 
   $("#closeBtn").click(function () {
     document.getElementById("mySidenav").style.width = "10%";
-     document.getElementById("main").style.marginLeft = "10%";
+     document.getElementById("main").style.marginLeft = "5%";
+     // document.getElementsByClassName("acaccordion").style.display = "none";
+     document.getElementById("searchPanel").style.display = "none";
+
   });
 
 
+  $(function(){
+        $(document).on('click','input[type=text]',function(){ this.select(); });
+    });
+
   $("#buttonForSearch").click(function () {
+    $("#sideList").html("");
+
     var searchInput  = $("#searchBooks").val();
     var numberResponse = "6";
     var bookApiSearch ="https://www.googleapis.com/books/v1/volumes?q=" + searchInput + "&maxResults=" + numberResponse;
@@ -50,6 +59,7 @@ $(document).ready(function() {
             var bookTitle = responsetext[index].volumeInfo.title;
             var bookAuthor = responsetext[index].volumeInfo.authors;
             var bookSrc = responsetext[index].volumeInfo.imageLinks.thumbnail;
+
           addDiv(bookAuthor, bookTitle, bookSrc, index);
           //end of response loop
             });
