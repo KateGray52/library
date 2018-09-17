@@ -1496,6 +1496,7 @@ float: right;
 padding: 6px;
 margin-top: 8px;
 font-size: 17px;
+display: inline;
 border: none;
 }
 
@@ -1535,7 +1536,28 @@ cursor: pointer;
     overflow: hidden;
 }
 
+.vertical-menu {
+    /* width: 200px; */
+    height: 150px;
+    overflow-y: auto;
+}
 
+.vertical-menu a li {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.vertical-menu a:hover li:hover{
+    background-color: #ccc;
+}
+
+.vertical-menu a.active ul.active {
+    background-color: #4CAF50;
+    color: white;
+}
 
 
 
