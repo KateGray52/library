@@ -10,16 +10,40 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
 	</head>
 	<body>
 		<div class="page-wrap">
+			<!-- <nav id="nav"> -->
 
-			<!-- Nav -->
-				<nav id="nav">
-					<ul>
-						<li><a href="index.html" class="active"><span class="icon fa-home"></span></a></li>
-						<li><a href="pages/gallery.html"><span class="icon fa-camera-retro"></span></a></li>
-						<li><a href="pages/generic.html"><span class="icon fa-file-text-o"></span></a></li>
+			<nav id="mySidenav" class="sidenav">
+
+				<ul>
+					<li> <a id="closeBtn" href="javascript:void(0)" class="closeBtn">Close</a></li>
+					<li> <a class="openBtn">Open</a></li>
+						<!-- <li><a href="pages/gallery.html"><span>Gallery</span></a></li> -->
+					<li id="navBookAdd" class="openBtn"><a>Add</a></li>
+
+					<li id="searchSideNav" class="openBtn">
+						<a class="accordion">Search</a>
+						<div class="panel search-container">
+
+
+						 <input type="text" placeholder="Search.."
+						 id="searchBooks" class="input" name="searchBooks" value="python">
+				     <button type="button" id="buttonForSearch"><i class="fa fa-search" ></i></button>
+
+					</div>
+
+					
+					<!-- <div id="sideList" class="flex-container">
+					</div> -->
+
+					</li>
+
+
 					</ul>
 				</nav>
 
@@ -27,14 +51,14 @@
 				<section id="main">
 
 					<!-- Banner -->
-						<section id="banner">
+						<!-- <section id="banner">
 							<div class="inner">
 								<h1>Digital Libray</h1>
 								<ul class="actions">
 									<li><a href="#galleries" class="button alt scrolly big">Continue</a></li>
 								</ul>
 							</div>
-						</section>
+						</section> -->
 
 					<!-- Gallery -->
 						<section id="galleries">
@@ -43,13 +67,16 @@
 								<div class="gallery">
 									<header class="special">
 										<h2>What's Next</h2>
+
+										<span id="openBtn" style="font-size:30px;cursor:pointer">Open</span>
+
 									</header>
 									<div class="content" id="bookImgMain">
 										<div class="media">
 											<a href="images/fulls/01.jpg"><img src="images/thumbs/01.jpg" alt="" title="This right here is a caption." /></a>
 										</div>
 										<div class="media">
-											<a href="images/fulls/05.jpg"><img src="images/thumbs/05.jpg" alt="" title="This right here is a caption." /></a>
+											<a href="images/fulls/05.jpg"><img src="images/books/pythonbook.jpg" alt="" title="This right here is a caption." /></a>
 										</div>
 									</div>
 									<footer>
@@ -61,7 +88,7 @@
 					<!-- Contact -->
 						<section id="sectionfix">
 
-							<header>
+							<!-- <header>
 								<h2>Search</h2>
 
 								<div class="flex-container">
@@ -69,37 +96,9 @@
 									<button type="button"  value="submit" id="buttonForSearch" >Submit</button>
 								</div>
 
+							</header> -->
 
-							</header>
-
-
-
-
-								<div id="sideList" class="flex-container">
-								</div>
-
-
-							<!-- Social -->
-								<!-- <div class="social column">
-									<h2>Search</h2>
-
-									<div >
-											<input id="searchBooks" class="input" name="searchBooks" type="text" value="python"/>
-											<button type="button"  value="submit" id="buttonForSearch" >Submit</button>
-									</div>
-
-									<div id="sideList">
-			            </div>
-
-								</div> -->
-
-							<!-- Form -->
-								<!-- <div class="column">
-									<h3>Library List</h3>
-									<section>
-										<div id="myBookList" class="displayBookList">
-										</div>
-									</section>
+								<!-- <div id="sideList" class="flex-container">
 								</div> -->
 
 						</section>
@@ -114,7 +113,11 @@
 		</div>
 
 		<!-- Scripts -->
+
+
 			<script src="assets/js/jquery.min.js"></script>
+			<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
 			<script src="assets/js/jquery.poptrox.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>

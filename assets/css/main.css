@@ -29,13 +29,11 @@
 	#sectionfix{
 	margin: 1rem;
 	}
-		
+		#searchBooks
 
 	.flex-container{
 		display: flex;
-		/* flex-wrap: wrap; */
-		flex-direction: column;
-		flex-flow: row wrap;
+		flex-wrap: wrap;
 		margin-top: 1rem;
 	}
 
@@ -1409,11 +1407,145 @@
 
 /* Menu */
 
+/* The side navigation menu */
+.sidenav {
+		background: #0d1217;
+		/* z-index: 10002;
+		position: relative; */
+
+
+    height: 100%; /* 100% Full-height */
+    width: 10%; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    /* background-color: #111; /* Black*/ */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+
+/* #mySidenav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	top: 1em;
+	left: 0;
+} */
+
+
+.sidenav ul li a {
+	color: rgba(255, 255, 255, 0.5);
+	text-decoration: none;
+	font-size: 1.5em;
+	transition: 0.3s;
+	display: block;
+	/* padding: 8px 8px 8px 32px; */
+
+}
+
+
+/* .sidenav a {
+
+
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 10px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+} */
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+
+
+/* .sidenav .search-container {
+float: right;
+} */
+
+.sidenav input[type=text] {
+padding: 6px;
+margin-top: 8px;
+font-size: 17px;
+border: none;
+}
+
+.sidenav .search-container button {
+float: right;
+padding: 6px 10px;
+/* margin-top: 8px;
+margin-right: 16px; */
+background: #ddd;
+font-size: 17px;
+border: none;
+cursor: pointer;
+}
+
+
+.accordion {
+    /* background-color: #eee; */
+    color: #444;
+    cursor: pointer;
+    /* padding: 18px; */
+    /* width: 100%; */
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+
+
+
+
+
+
 	#nav {
 		background: #0d1217;
 		z-index: 10002;
 		position: relative;
-		width: 4em;
+		width: 6em;
+		/* width: 4em; */
 	}
 
 		#nav ul {

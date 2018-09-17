@@ -2,6 +2,33 @@ console.log("connected");
 
 $(document).ready(function() {
 
+
+  $(".accordion").click(function () {
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    for (i = 0; i < acc.length; i++) {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+    };
+  });
+
+
+  $(".openBtn").click(function () {
+    document.getElementById("mySidenav").style.width = "30%";
+     document.getElementById("main").style.marginLeft = "30%";
+  });
+
+  $("#closeBtn").click(function () {
+    document.getElementById("mySidenav").style.width = "10%";
+     document.getElementById("main").style.marginLeft = "10%";
+  });
+
+
   $("#buttonForSearch").click(function () {
     var searchInput  = $("#searchBooks").val();
     var numberResponse = "6";
