@@ -11,6 +11,34 @@ The add books function uses Google Books API to find the specific book your look
 
 This can be used to keep track or books you own, make a list of books you want, keep track of loaned items, or get information.
 
+## Todo
+
+* Add selection to beginning Bookcase,
+* remove/hide books
+* remove example books after adding more,
+* media class same as display image in css
+* add thick line/ shelf to bookcase
+* fix main header/ move to navbar
+* close nav on click out
+* main size to 30%
+* Responsive book search
+* different search methods,
+* add book number/edition in search display,
+* smaller images in book search
+* faded line between book divs
+* see more in search Books
+* display style in search books
+* align search display info,
+* add/edit categories
+* search/display methods through Bookcase
+* Make Responsive
+* accordion on clicked bookcase book to display information
+* draggable books
+* Save book selection -signin/cache
+
+
+
+
 
 ## Getting Started
 
