@@ -3,6 +3,13 @@ console.log("connected");
 $(document).ready(function() {
 
 
+  // function removeElement(elementId) {
+  //   // Removes an element from the document
+  //   var element = document.getElementById(elementId);
+  //   element.parentNode.removeChild(element);
+  // };
+
+
   $(".accordion").click(function () {
     var acc = document.getElementsByClassName("accordion");
     var i;
@@ -18,6 +25,23 @@ $(document).ready(function() {
   });
 
 
+  $(".accordionDisplay").click(function () {
+    var acc = document.getElementsByClassName("accordionDisplay");
+    var i;
+    for (i = 0; i < acc.length; i++) {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+    };
+  });
+
+
+
+
   $(".openBtn").click(function () {
     document.getElementById("mySidenav").style.width = "30%";
      document.getElementById("main").style.marginLeft = "30%";
@@ -25,7 +49,16 @@ $(document).ready(function() {
 
   $("#closeBtn").click(function () {
     document.getElementById("mySidenav").style.width = "10%";
-     document.getElementById("main").style.marginLeft = "5%";
+     document.getElementById("main").style.marginLeft = "10%";
+     // document.getElementsByClassName("acaccordion").style.display = "none";
+
+     document.getElementById("searchPanel").style.display = "none";
+
+  });
+
+  $("#main").click(function () {
+    document.getElementById("mySidenav").style.width = "10%";
+     document.getElementById("main").style.marginLeft = "10%";
      // document.getElementsByClassName("acaccordion").style.display = "none";
      document.getElementById("searchPanel").style.display = "none";
 
@@ -110,8 +143,8 @@ $(document).ready(function() {
         $(clonedImg).appendTo(newDivImg);
         console.log("testing newDivimg", newDivImg);
 
-        $(GalleryDiv).append(newDivImg);
-
+        // $(GalleryDiv).append(newDivImg);
+        $(GalleryDiv).prepend(newDivImg);
       });
 
       var newselectnode = document.createTextNode("select");

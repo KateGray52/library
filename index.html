@@ -11,6 +11,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
 		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 
 	</head>
@@ -20,14 +22,16 @@
 
 			<nav id="mySidenav" class="sidenav">
 
+				<a href="#" data-tag="all" class="button big alt"><span><i class="fas fa-book-open"></i></span></a>
+
 				<ul>
 					<li> <a id="closeBtn" href="javascript:void(0)" class="closeBtn">Close</a></li>
-					<li> <a class="openBtn">Open</a></li>
+					<!-- <li> <a class="openBtn">Open</a></li> -->
 						<!-- <li><a href="pages/gallery.html"><span>Gallery</span></a></li> -->
-					<li id="navBookAdd" class="openBtn"><a>Add</a></li>
+					<!-- <li id="navBookAdd" class="openBtn"><a>Add</a></li> -->
 
 					<li id="searchSideNav" class="openBtn">
-						<a class="accordion">Search</a>
+						<a class="accordion">Add</a>
 						<div class="panel" id="searchPanel">
 
 						<div class=search-container style="background: white;">
@@ -47,18 +51,11 @@
 
 				</li>
 
-
 				</ul>
 			</nav>
 
 			<!-- Main -->
 				<section id="main">
-
-					<!-- Header -->
-						<header id="header">
-							<div>Digital Library</div>
-						</header>
-
 
 					<!-- Banner -->
 						<!-- <section id="banner">
@@ -79,25 +76,61 @@
 										<h2>What's Next</h2>
 									</header> -->
 									<header>
-										<h1>Bookcase</h1>
+										<h1>Bookcase </h1>
+										<a href="#"
+										 class="button small"><span><i class="fas fa-search"></i></span></a>
+
+
 										<ul class="tabs">
+
+											<li><a href="#" data-tag="all" class="button small alt"><span><i class="far fa-edit"></i></span></a></li>
+
 											<li><a href="#" data-tag="all" class="button active">All</a></li>
 											<li><a href="#" data-tag="people" class="button">Science Fiction</a></li>
-											<li><a href="#" data-tag="place" class="button">Biography</a></li>
 											<li><a href="#" data-tag="thing" class="button">Programming</a></li>
 
 										</ul>
 									</header>
+
+
+
+
 									<div class="content" id="bookImgMain">
 										<!-- <div class="media">
 											<a href="images/fulls/01.jpg"><img src="images/thumbs/01.jpg" alt="" title="This right here is a caption." /></a>
 										</div> -->
+
+										<!-- <a class="accordion">Search</a>
+										<div class="panel" id="searchPanel">
+
+										 <div class="vertical-menu">
+											 <a href="#" class="active" style="background: slategray;">Results</a>
+
+										</div>
+									</div> -->
+
+
+
+
 										<div class="media exampleImg">
 											<a href="images/fulls/01.jpg"><img src="images/books/book2.jpg" alt="" title="This right here is a caption." /></a>
 										</div>
-										<div class="media exampleImg">
-											<a href="images/fulls/01.jpg"><img src="images/books/css1.jpg" alt="" title="This right here is a caption." /></a>
+
+
+
+
+										<div class="media exampleImg accordionDisplay">
+
+										<img src="images/books/css1.jpg" alt="" title="This right here is a caption." /><i class="fas fa-star"></i>accordion
+
 										</div>
+										<div class="panel">
+										 <p>Lorem ipsum dolor  consectetur </p>
+										 <p>Lorem ipsum dolor sit amet, </p>
+										 <p><i class="fas fa-info"></i>
+										 <i class="far fa-trash-alt"></i> <i class="fas fa-arrows-alt"></i> <i class="fas fa-book-reader"></i> <i class="fas fa-star"></i></p>
+									</div>
+
 										<div class="media exampleImg">
 											<a href="images/fulls/05.jpg"><img src="images/books/js1.jpg" alt="" title="This right here is a caption." /></a>
 										</div>
@@ -147,6 +180,11 @@
 
 			<script src="assets/js/jquery.poptrox.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
+
+			<!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
+
+
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>

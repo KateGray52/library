@@ -26,6 +26,10 @@
 		line-height: 1;
 	}
 
+
+	#sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+  #sortable li span { position: absolute; margin-left: -1.3em; }
 	/* #sectionfix{
 	margin: 1rem;
 	}
@@ -53,6 +57,14 @@
 		bottom: 0;
 
 	}
+
+	#bookImgMain {
+		border-bottom-width:3px;
+	border-bottom-color: Black;
+	border-bottom-style: solid;
+	}
+
+
 
 
 	ol, ul {
@@ -891,6 +903,11 @@
 					max-width: 100%;
 					height: auto;
 					vertical-align: middle;
+
+					position: absolute;
+					bottom: 0;
+
+
 				}
 
 				.gallery .content .media:hover img {
@@ -1440,7 +1457,7 @@
     left: 0;
     /* background-color: #111; /* Black*/ */
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
+    padding-top: 10px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
@@ -1749,7 +1766,7 @@ cursor: pointer;
 	#main {
 		background: #f1f1f1;
 		width: 100%;
-		margin-left: 5%;
+		margin-left: 10%;
 	}
 
 		#main #header {
