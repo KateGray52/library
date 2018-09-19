@@ -113,36 +113,48 @@ $(document).ready(function() {
       imgDivPure.appendChild(imgForList);
 
 
-      // var newSelectBtn = document.createElement("BUTTON");
-      // newSelectBtn.addEventListener("click", function(){
-      //   var el = $(this);
-      //
-      //   var imgsibling = (el).siblings('img');
-      //
-      //   var GalleryDiv = document.getElementById('bookImgMain');
-      //   var newDivImg = document.createElement('div');
-      //   newDivImg.setAttribute('class', "media");
-      //   var clonedImg =(imgsibling).clone().removeClass().addClass('imgClassForGallery');
-      //   console.log("testing clone 1", clonedImg);
-      //   document.body.append(clonedImg);
-      //   console.log("testing clone 2", clonedImg);
-      //   $(clonedImg).appendTo(newDivImg);
-      //   console.log("testing newDivimg", newDivImg);
-      //
-      //   // $(GalleryDiv).append(newDivImg);
-      //   $(GalleryDiv).prepend(newDivImg);
-      // });
-      //
-      // var newselectnode = document.createTextNode("select");
-      // newSelectBtn.appendChild(newselectnode);
-      // document.body.appendChild(newSelectBtn);
+      var newSelectBtn = document.createElement("BUTTON");
+      newSelectBtn.setAttribute("class", "secondary-button pure-button")
+
+      newSelectBtn.addEventListener("click", function(){
+        var el = $(this);
+        console.log(el);
+
+        var imgparent = (el).parent();
+        console.log(imgparent);
+        var imgsibling = (imgparent).children('.pure-u');
+        console.log(imgsibling);
+        var imgInDiv = (imgsibling).children('img');
+        console.log(imgInDiv);
+
+
+        var GalleryDiv = document.getElementById('bookImgMain');
+        var newDivImg = document.createElement('div');
+        newDivImg.setAttribute('class', "pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 booksMedia");
+        var clonedImg =(imgInDiv).clone().removeClass().addClass('pure-img-responsive imgExample');
+
+        console.log("testing clone 1", clonedImg);
+        document.body.append(clonedImg);
+        console.log("testing clone 2", clonedImg);
+        $(clonedImg).appendTo(newDivImg);
+        console.log("testing newDivimg", newDivImg);
+
+        // $(GalleryDiv).append(newDivImg);
+
+
+        $(GalleryDiv).prepend(newDivImg);
+      });
+
+      var newselectnode = document.createTextNode("select");
+      newSelectBtn.appendChild(newselectnode);
+      document.body.appendChild(newSelectBtn);
 
       var newDivWrapper = document.createElement('div');
       newDivWrapper.setAttribute('class', "email-item pure-g");
       // newDivWrapper.id = 'container'+index;
       newDivWrapper.appendChild(imgDivPure);
       newDivWrapper.appendChild(infoNodeDiv);
-      // newDivWrapper.appendChild(newSelectBtn);
+      newDivWrapper.appendChild(newSelectBtn);
 
       ListRef.appendChild(newDivWrapper);
 
