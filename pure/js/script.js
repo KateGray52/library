@@ -3,12 +3,31 @@ console.log("connected");
 $(document).ready(function() {
 
 
-  // function removeElement(elementId) {
-  //   // Removes an element from the document
-  //   var element = document.getElementById(elementId);
-  //   element.parentNode.removeChild(element);
-  // };
+  // newEditBtn.addEventListener("click", function() {
+  //   var x = document.getElementsByClassName("catogories");
+  //   if (x.contentEditable == "true") {
+  //       x.contentEditable = "false";
+  //       newEditBtn.innerHTML = "Edit";
+  //   } else {
+  //       x.contentEditable = "true";
+  //       newEditBtn.innerHTML = "Save";
+  //   }
+  // });
 
+
+  // var newDelBtn = document.createElement("BUTTON");
+  // newDelBtn.addEventListener("click", function() {
+  // document.getElementById('tableId').deleteRow(this.parentNode.parentNode.rowIndex)
+  // });
+  // var newDelete = document.createTextNode("Delete");
+  // newDelBtn.appendChild(newDelete);
+  // document.body.appendChild(newDelBtn);
+
+
+
+  $(".deleteBtn").click(function () {
+    $(this).closest("div").remove();
+  });
 
 
   $(".accordionDisplay").click(function () {
@@ -25,13 +44,11 @@ $(document).ready(function() {
     };
   });
 
-
-
-
   // $(".openBtn").click(function () {
   //   document.getElementById("mySidenav").style.width = "30%";
   //    document.getElementById("main").style.marginLeft = "30%";
   // });
+
   $(".openBtn").click(function () {
      document.getElementById("list").style.display = "block";
      document.getElementById("list").style.padding = "0";
@@ -50,7 +67,9 @@ $(document).ready(function() {
     });
 
   $("#buttonForSearch").click(function () {
-    $("#sideList").html("");
+    // $("#list").html("");
+    $('#list :not(:first-child)').remove();
+    // $('#list:not(:first-child)').html("");
 
     var searchInput  = $("#searchBooks").val();
     var numberResponse = "6";
@@ -121,26 +140,16 @@ $(document).ready(function() {
         console.log(el);
 
         var imgparent = (el).parent();
-        console.log(imgparent);
         var imgsibling = (imgparent).children('.pure-u');
-        console.log(imgsibling);
         var imgInDiv = (imgsibling).children('img');
-        console.log(imgInDiv);
-
 
         var GalleryDiv = document.getElementById('bookImgMain');
         var newDivImg = document.createElement('div');
         newDivImg.setAttribute('class', "pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 booksMedia");
-        var clonedImg =(imgInDiv).clone().removeClass().addClass('pure-img-responsive imgExample');
+        var clonedImg =(imgInDiv).clone().removeClass().addClass('pure-img-responsive');
 
-        console.log("testing clone 1", clonedImg);
         document.body.append(clonedImg);
-        console.log("testing clone 2", clonedImg);
         $(clonedImg).appendTo(newDivImg);
-        console.log("testing newDivimg", newDivImg);
-
-        // $(GalleryDiv).append(newDivImg);
-
 
         $(GalleryDiv).prepend(newDivImg);
       });
@@ -150,7 +159,7 @@ $(document).ready(function() {
       document.body.appendChild(newSelectBtn);
 
       var newDivWrapper = document.createElement('div');
-      newDivWrapper.setAttribute('class', "email-item pure-g");
+      newDivWrapper.setAttribute('class', "email-item email-item-selected pure-g");
       // newDivWrapper.id = 'container'+index;
       newDivWrapper.appendChild(imgDivPure);
       newDivWrapper.appendChild(infoNodeDiv);

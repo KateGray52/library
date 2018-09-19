@@ -40,10 +40,10 @@
       <a class="pure-menu-heading" href="#">Library</a>
       <ul class="pure-menu-list">
         <!-- <li class="pure-menu-item"><a id="closeBtn" href="javascript:void(0)" class="closeBtn"><i class="fas fa-times-circle"></i>Close</a></li> -->
-          <li class="pure-menu-item"><a class="openBtn">Open</a></li>
+          <li class="pure-menu-item"><a class="pure-menu-link openBtn">Open</a></li>
           <li class="pure-menu-item" id="searchSideNav">
-          <a>Add</a>
-          <div class="search-container">
+          <a class="pure-menu-link">Add</a>
+          <div class="pure-control-group">
             <input type="text" placeholder="Search.."
             id="searchBooks" class="input" name="searchBooks" >
             <button type="button" id="buttonForSearch"><i class="fa fa-search openBtn" ></i></button>
@@ -61,7 +61,27 @@
             </div>
         </div>
 
+
+
+
         <div class="email-item email-item-selected pure-g">
+            <div class="pure-u">
+              <img src="http://books.google.com/books/content?id=8AcvDwAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api" class="email-avatar">
+              </div>
+          <div class="pure-u-3-4">
+            <h5 class="email-name">Python</h5>
+              <h4 class="email-subject">by Author</h4>
+                <p class="email-desc">
+                  edition: 3rd
+                  </p>
+                  <p class="email-desc">
+                    book number: 23454b3
+                    </p>
+            </div>
+          </div>
+
+
+        <!-- <div class="email-item email-item-selected pure-g">
             <div class="pure-u">
               <img width="64" height="64" alt="Tilo Mitra&#x27;s avatar" class="email-avatar" src="img/common/tilo-avatar.png">
               </div>
@@ -70,13 +90,14 @@
             <h5 class="email-name">Tilo Mitra</h5>
               <h4 class="email-subject">Hello from Toronto</h4>
                 <p class="email-desc">
-                               Hey, I just wanted to check in with you from Toronto. I got here earlier today.
+                                I got here earlier today.
                   </p>
             </div>
-          </div>
+          </div> -->
+
+
+
       </div>
-
-
 
 
 
@@ -84,84 +105,91 @@
   <div id="main">
     <div class="header">
         <h1>Digital Library</h1>
-        <!-- <h2>A subtitle for your page goes here</h2> -->
+
     </div>
 
     <div class="content">
-            <!-- <h2 class="content-subhead">Bookcase</h2> -->
+
             <div class="email-content-header pure-g">
               <div class="pure-u-1-2">
                 <h1 class="email-content-title">
                   Digital Library
                 </h1>
-                <p class="email-content-subtitle">
-                  search area
-                </p>
+
+                  <div class="email-content-subtitle pure-control-group">
+                    <input type="text" placeholder="Search.."
+                    id="" class="input" name="" >
+                    <button type="button"  id=""><i class="fa fa-search openBtn" ></i></button>
+                  </div>
+
               </div>
 
               <div class="email-content-controls pure-u-1-2">
-                <button class="secondary-button pure-button"><a href="#" data-tag="all" class="button small alt"><span><i class="far fa-edit"></i></span></a>Edit</button>
-                <button class="secondary-button pure-button">All</button>
-                <button class="secondary-button pure-button">Programming</button>
+                <button class="secondary-button pure-button"><a class="button small alt catagoryEditBtn"><span><i class="far fa-edit"></i></span></a></button>
+                <button class="secondary-button pure-button catogory-all">All</button>
+                <button class="secondary-button pure-button catogories">Programming</button>
                 <button class="secondary-button pure-button">Science Fiction</button>
 
               </div>
             </div>
-          <!-- </h2> -->
-
-
 
 
       <div id="bookImgMain" class="pure-g">
 
-        <div class=" pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 booksMedia ">
-          <img class="pure-img-responsive imgExample" src="http://farm3.staticflickr.com/2813/9069585985_80da8db54f.jpg" alt="Train">
+
+
+        <div class=" pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 booksMedia accordionDisplay">
+          <img  class="pure-img-responsive imgExample" src="images/books/book2.jpg">
+          <i class="far fa-trash-alt deleteBtn"></i>
+        </div>
+
+        <div class="panel pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 booksMedia panel">
+          <p>Lorem ipsum dolor  consectetur </p>
         </div>
 
         <div class=" pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 booksMedia accordionDisplay">
-          <img  class="pure-img-responsive imgExample" src="images/books/book2.jpg">accordion
+          <img  class="pure-img-responsive imgExample" src="images/books/calc.jpg"><i class="far fa-trash-alt deleteBtn"></i>
         </div>
-        <div class=" pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 panel">
+
+        <div class="panel pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 ">
           <p>Lorem ipsum dolor  consectetur </p>
           <p><i class="fas fa-info"></i>
-          <i class="far fa-trash-alt"></i> <i class="fas fa-arrows-alt"></i> <i class="fas fa-book-reader"></i> <i class="fas fa-star"></i></p>
+
+          <i class="fas fa-arrows-alt"></i> <i class="fas fa-book-reader"></i> <i class="fas fa-star"></i></p>
         </div>
 
 
         <div class=" pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 booksMedia accordionDisplay">
-          <img  class="pure-img-responsive imgExample" src="images/books/book2.jpg">accordion
+          <img  class="pure-img-responsive imgExample" src="images/books/book1.jpg"><i class="far fa-trash-alt deleteBtn"></i>
         </div>
-        <div class=" pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 booksMedia panel">
+
+        <div class="panel pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 booksMedia panel">
           <p>Lorem ipsum dolor  consectetur </p>
         </div>
 
 
-
-
-        <div class=" pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 booksMedia">
-          <img  class="pure-img-responsive imgExample" src="images/books/js1.jpg">
+        <div class=" pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 booksMedia accordionDisplay">
+          <img  class="pure-img-responsive imgExample" src="images/books/js1.jpg"><i class="far fa-trash-alt deleteBtn"></i>
         </div>
 
-        <div class=" pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 booksMedia">
-          <img  class="pure-img-responsive imgExample" src="images/books/css1.jpg">
+        <div class="panel pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 booksMedia panel">
+          <p>Lorem ipsum dolor  consectetur </p>
         </div>
 
 
+        <div class=" pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 booksMedia accordionDisplay">
+          <img  class="pure-img-responsive imgExample" src="images/books/css1.jpg"><i class="far fa-trash-alt deleteBtn"></i>
+        </div>
+
+        <div class="panel pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 booksMedia panel">
+          <p>Lorem ipsum dolor  consectetur </p>
+        </div>
 
 
-
-        <div class=" pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8">
+        <!-- <div class=" pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8">
             <img class="pure-img-responsive" src="http://farm3.staticflickr.com/2813/9069585985_80da8db54f.jpg" alt="Train">
-        </div>
-        <div class=" pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8">
-            <img class="pure-img-responsive" src="http://farm3.staticflickr.com/2875/9069037713_1752f5daeb.jpg" alt="Peyto Lake">
-        </div>
-        <div class=" pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8">
-            <img class="pure-img-responsive" src="http://farm3.staticflickr.com/2813/9069585985_80da8db54f.jpg" alt="Train">
-        </div>
-        <div class=" pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8">
-            <img class="pure-img-responsive" src="http://farm3.staticflickr.com/2875/9069037713_1752f5daeb.jpg" alt="Peyto Lake">
-        </div>
+        </div> -->
+
 
 
 

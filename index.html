@@ -1,181 +1,214 @@
-<!DOCTYPE HTML>
-<!--
-	Snapshot by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
-<html>
-	<head>
-		<title>Library Main</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
+    <title>Pure Main</title>
 
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
 
-		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
 
-	</head>
-	<body>
-		<div class="page-wrap">
-			<!-- <nav id="nav"> -->
-
-			<nav id="mySidenav" class="sidenav">
-
-				<a href="#" data-tag="all" class="button big alt"><span><i class="fas fa-book-open"></i></span></a>
-				<a id="closeBtn" href="javascript:void(0)" class="closeBtn"><i class="fas fa-times-circle"></i></a>
-
-				<ul>
-					<li> <a id="closeBtn" href="javascript:void(0)" class="closeBtn"><i class="fas fa-times-circle"></i>Close</a></li>
-					<!-- <li> <a class="openBtn">Open</a></li> -->
-						<!-- <li><a href="pages/gallery.html"><span>Gallery</span></a></li> -->
-					<!-- <li id="navBookAdd" class="openBtn"><a>Add</a></li> -->
-
-					<li id="searchSideNav" class="openBtn">
-						<a class="accordion">Add</a>
-						<div class="panel" id="searchPanel">
-
-						<div class=search-container style="background: white;">
-							<input type="text" placeholder="Search.."
-							id="searchBooks" class="input" name="searchBooks" >
-							<button type="button" id="buttonForSearch"><i class="fa fa-search" ></i></button>
-						</div>
-
-						 <div class="vertical-menu">
-							 <a href="#" class="active" style="background: slategray;">Results</a>
-
-							 <div id="sideList" style=" background: white; padding: 5px; ">
- 							</div>
-
-						</div>
-					</div>
-
-				</li>
-
-				</ul>
-			</nav>
-
-			<!-- Main -->
-				<section id="main">
-
-					<!-- Banner -->
-						<!-- <section id="banner">
-							<div class="inner">
-								<h1>Digital Libray</h1>
-								<ul class="actions">
-									<li><a href="#galleries" class="button alt scrolly big">Continue</a></li>
-								</ul>
-							</div>
-						</section> -->
-
-					<!-- Gallery -->
-						<section id="galleries">
-
-							<!-- Photo Galleries -->
-								<div class="gallery">
-									<!-- <header class="special">
-										<h2>What's Next</h2>
-									</header> -->
-									<header>
-										<h1>Bookcase </h1>
-										<a href="#"
-										 class="button small"><span><i class="fas fa-search"></i></span></a>
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 
-										<ul class="tabs">
+            <link rel="stylesheet" href="css/layouts/side-menu.css">
 
-											<li><a href="#" data-tag="all" class="button small alt"><span><i class="far fa-edit"></i></span></a></li>
+            <link rel="stylesheet" href="css/layouts/email.css">
+        <!--<![endif]-->
+</head>
+<body>
 
-											<li><a href="#" data-tag="all" class="button active">All</a></li>
-											<li><a href="#" data-tag="people" class="button">Science Fiction</a></li>
-											<li><a href="#" data-tag="thing" class="button">Programming</a></li>
 
-										</ul>
-									</header>
+
+<div id="layout">
+    <!-- Menu toggle -->
+  <a href="#menu" id="menuLink" class="menu-link">
+      <!-- Hamburger icon -->
+      <span></span>
+  </a>
+
+
+
+  <div id="menu">
+    <div class="pure-menu">
+      <a class="pure-menu-heading" href="#">Library</a>
+      <ul class="pure-menu-list">
+        <!-- <li class="pure-menu-item"><a id="closeBtn" href="javascript:void(0)" class="closeBtn"><i class="fas fa-times-circle"></i>Close</a></li> -->
+          <li class="pure-menu-item"><a class="pure-menu-link openBtn">Open</a></li>
+          <li class="pure-menu-item" id="searchSideNav">
+          <a class="pure-menu-link">Add</a>
+          <div class="pure-control-group">
+            <input type="text" placeholder="Search.."
+            id="searchBooks" class="input" name="searchBooks" >
+            <button type="button" id="buttonForSearch"><i class="fa fa-search openBtn" ></i></button>
+          </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  <div id="list" class="pure-u-1-3">
+
+      <div class="email-item email-item-selected pure-g">
+          <div class="pure-u">
+            <div ><a id="closeBtn" href="javascript:void(0)" class="closeBtn"><i class="fas fa-times-circle"></i>Close</a></div>
+            </div>
+        </div>
 
 
 
 
-									<div class="content" id="bookImgMain">
-										<!-- <div class="media">
-											<a href="images/fulls/01.jpg"><img src="images/thumbs/01.jpg" alt="" title="This right here is a caption." /></a>
-										</div> -->
-
-										<!-- <a class="accordion">Search</a>
-										<div class="panel" id="searchPanel">
-
-										 <div class="vertical-menu">
-											 <a href="#" class="active" style="background: slategray;">Results</a>
-
-										</div>
-									</div> -->
-
-
-
-
-										<div class="media exampleImg">
-											<a href="images/fulls/01.jpg"><img src="images/books/book2.jpg" alt="" title="This right here is a caption." /></a>
-										</div>
+        <div class="email-item email-item-selected pure-g">
+            <div class="pure-u">
+              <img src="http://books.google.com/books/content?id=8AcvDwAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api" class="email-avatar">
+              </div>
+          <div class="pure-u-3-4">
+            <h5 class="email-name">Python</h5>
+              <h4 class="email-subject">by Author</h4>
+                <p class="email-desc">
+                  edition: 3rd
+                  </p>
+                  <p class="email-desc">
+                    book number: 23454b3
+                    </p>
+            </div>
+          </div>
 
 
+        <!-- <div class="email-item email-item-selected pure-g">
+            <div class="pure-u">
+              <img width="64" height="64" alt="Tilo Mitra&#x27;s avatar" class="email-avatar" src="img/common/tilo-avatar.png">
+              </div>
+
+          <div class="pure-u-3-4">
+            <h5 class="email-name">Tilo Mitra</h5>
+              <h4 class="email-subject">Hello from Toronto</h4>
+                <p class="email-desc">
+                                I got here earlier today.
+                  </p>
+            </div>
+          </div> -->
 
 
-										<div class="media exampleImg accordionDisplay">
 
-										<img src="images/books/css1.jpg" alt="" title="This right here is a caption." /><i class="fas fa-star"></i>accordion
-
-										</div>
-										<div class="panel">
-										 <p>Lorem ipsum dolor  consectetur </p>
-										 <p>Lorem ipsum dolor sit amet, </p>
-										 <p><i class="fas fa-info"></i>
-										 <i class="far fa-trash-alt"></i> <i class="fas fa-arrows-alt"></i> <i class="fas fa-book-reader"></i> <i class="fas fa-star"></i></p>
-									</div>
-
-										<div class="media exampleImg">
-											<a href="images/fulls/05.jpg"><img src="images/books/js1.jpg" alt="" title="This right here is a caption." /></a>
-										</div>
-
-										<div class="media exampleImg">
-											<a href="images/fulls/05.jpg"><img src="images/books/book1.jpg" alt="" title="This right here is a caption." /></a>
-										</div>
-									</div>
-									<footer>
-										<a href="gallery.html" class="button big">Full Gallery</a>
-									</footer>
-								</div>
-						</section>
-
-					<!-- Contact -->
+      </div>
 
 
-					<!-- Footer -->
-						<footer id="footer">
-							<div class="copyright">
-								&copy; Untitled Design: <a href="https://templated.co/">TEMPLATED</a>. Images: <a href="https://unsplash.com/">Unsplash</a>.
-							</div>
-						</footer>
-				</section>
-		</div>
-
-		<!-- Scripts -->
 
 
-			<script src="assets/js/jquery.min.js"></script>
-			<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+  <div id="main">
+    <div class="header">
+        <h1>Digital Library</h1>
 
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
+    </div>
 
-			<!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-			<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
+    <div class="content">
+
+            <div class="email-content-header pure-g">
+              <div class="pure-u-1-2">
+                <h1 class="email-content-title">
+                  Digital Library
+                </h1>
+
+                  <div class="email-content-subtitle pure-control-group">
+                    <input type="text" placeholder="Search.."
+                    id="" class="input" name="" >
+                    <button type="button"  id=""><i class="fa fa-search openBtn" ></i></button>
+                  </div>
+
+              </div>
+
+              <div class="email-content-controls pure-u-1-2">
+                <button class="secondary-button pure-button"><a class="button small alt catagoryEditBtn"><span><i class="far fa-edit"></i></span></a></button>
+                <button class="secondary-button pure-button catogory-all">All</button>
+                <button class="secondary-button pure-button catogories">Programming</button>
+                <button class="secondary-button pure-button">Science Fiction</button>
+
+              </div>
+            </div>
 
 
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<!-- <script src="assets/test/test.js"></script> -->
-			<script src="assets/js/script.js"></script>
+      <div id="bookImgMain" class="pure-g">
 
-	</body>
+
+
+        <div class=" pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 booksMedia accordionDisplay">
+          <img  class="pure-img-responsive imgExample" src="images/books/book2.jpg">
+          <i class="far fa-trash-alt deleteBtn"></i>
+        </div>
+
+        <div class="panel pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 booksMedia panel">
+          <p>Lorem ipsum dolor  consectetur </p>
+        </div>
+
+        <div class=" pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 booksMedia accordionDisplay">
+          <img  class="pure-img-responsive imgExample" src="images/books/calc.jpg"><i class="far fa-trash-alt deleteBtn"></i>
+        </div>
+
+        <div class="panel pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 ">
+          <p>Lorem ipsum dolor  consectetur </p>
+          <p><i class="fas fa-info"></i>
+
+          <i class="fas fa-arrows-alt"></i> <i class="fas fa-book-reader"></i> <i class="fas fa-star"></i></p>
+        </div>
+
+
+        <div class=" pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 booksMedia accordionDisplay">
+          <img  class="pure-img-responsive imgExample" src="images/books/book1.jpg"><i class="far fa-trash-alt deleteBtn"></i>
+        </div>
+
+        <div class="panel pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 booksMedia panel">
+          <p>Lorem ipsum dolor  consectetur </p>
+        </div>
+
+
+        <div class=" pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 booksMedia accordionDisplay">
+          <img  class="pure-img-responsive imgExample" src="images/books/js1.jpg"><i class="far fa-trash-alt deleteBtn"></i>
+        </div>
+
+        <div class="panel pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 booksMedia panel">
+          <p>Lorem ipsum dolor  consectetur </p>
+        </div>
+
+
+        <div class=" pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 booksMedia accordionDisplay">
+          <img  class="pure-img-responsive imgExample" src="images/books/css1.jpg"><i class="far fa-trash-alt deleteBtn"></i>
+        </div>
+
+        <div class="panel pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 booksMedia panel">
+          <p>Lorem ipsum dolor  consectetur </p>
+        </div>
+
+
+        <!-- <div class=" pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8">
+            <img class="pure-img-responsive" src="http://farm3.staticflickr.com/2813/9069585985_80da8db54f.jpg" alt="Train">
+        </div> -->
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script src="js/ui.js"></script>
+<!-- <script src="assets/js/main.js"></script> -->
+<!-- <script src="assets/test/test.js"></script> -->
+<script src="js/script.js"></script>
+
+
+</body>
 </html>
