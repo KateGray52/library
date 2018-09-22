@@ -19,7 +19,7 @@ To use clone or download and open in your text editor.
 
 ## Built With
 
-* [Templated](https://templated.co/snapshot) - Template
+* [Pure.Css](https://purecss.io/) - Layout
 * [Google Books Api](https://developers.google.com/books/) - API
 
 
