@@ -15,12 +15,12 @@ $(document).ready(function() {
   // });
 
 
-  // var newDelBtn = document.createElement("BUTTON");
-  // newDelBtn.addEventListener("click", function() {
-  // document.getElementById('tableId').deleteRow(this.parentNode.parentNode.rowIndex)
-  // });
-  // var newDelete = document.createTextNode("Delete");
-  // newDelBtn.appendChild(newDelete);
+  var newDelBtn = document.createElement("BUTTON");
+  newDelBtn.addEventListener("click", function() {
+  document.getElementById('tableId').deleteRow(this.parentNode.parentNode.rowIndex)
+  });
+  var newDelete = document.createTextNode("Delete");
+  newDelBtn.appendChild(newDelete);
   // document.body.appendChild(newDelBtn);
 
 
@@ -92,7 +92,13 @@ $(document).ready(function() {
             var bookAuthor = responsetext[index].volumeInfo.authors;
             var bookSrc = responsetext[index].volumeInfo.imageLinks.thumbnail;
 
-          addDiv(bookAuthor, bookTitle, bookSrc, index);
+            var bookCat = responsetext[index].volumeInfo.categories;
+            var bookInfo = responsetext[index].volumeInfo.infoLink;
+            // console.log(bookCat);
+            // console.log(bookInfo);
+
+
+          addDiv(bookAuthor, bookTitle, bookSrc, index, bookCat, bookInfo);
           //end of response loop
             });
         //end of response
@@ -102,23 +108,42 @@ $(document).ready(function() {
       };
 
 
-    function addDiv(author, bookTitle, bookImg, index) {
+    function addDiv(author, bookTitle, bookImg, index, bookCat, bookInfo) {
 
       var ListRef = document.getElementById('list')
 
       var infoNodeDiv = document.createElement("div");
-      infoNodeDiv.setAttribute("class", "pure-u-3-4")
-      var bookpara = document.createElement("h5");
+      infoNodeDiv.setAttribute("class", "infogroup")
+      var bookpara = document.createElement("div");
       bookpara.setAttribute("class", "email-name")
-      var authorpara = document.createElement("p");
+      bookpara.setAttribute("style", "font-weight: bold")
+      var authorpara = document.createElement("div");
       authorpara.setAttribute("class", "email-desc")
       var booknode=document.createTextNode(bookTitle);
       var authornode=document.createTextNode(author);
+
       bookpara.appendChild(booknode);
       authorpara.appendChild(authornode);
 
+
+      var infolinkpara = document.createElement("A");
+      var infonode=document.createTextNode("Info");
+      infolinkpara.setAttribute("href", bookInfo);
+      infolinkpara.setAttribute("style", "border-bottom: none");
+      infolinkpara.appendChild(infonode);
+
+
+      var catpara = document.createElement("div");
+      catpara.setAttribute("class", "catpara")
+      catpara.setAttribute("style", "font-style: italic;")
+      var catnode=document.createTextNode(bookCat);
+      catpara.appendChild(catnode);
+      // infopara.appendChild(infonode);
+
       infoNodeDiv.appendChild(bookpara);
       infoNodeDiv.appendChild(authorpara);
+      infoNodeDiv.appendChild(catpara);
+      infoNodeDiv.appendChild(infolinkpara);
 
 
       //make image for table list
@@ -133,7 +158,9 @@ $(document).ready(function() {
 
 
       var newSelectBtn = document.createElement("BUTTON");
-      newSelectBtn.setAttribute("class", "secondary-button pure-button")
+      newSelectBtn.setAttribute("class", "button small")
+      newSelectBtn.setAttribute("style", "margin-top: 8rem;")
+
 
       newSelectBtn.addEventListener("click", function(){
         var el = $(this);
@@ -145,7 +172,7 @@ $(document).ready(function() {
 
         var GalleryDiv = document.getElementById('bookImgMain');
         var newDivImg = document.createElement('div');
-        newDivImg.setAttribute('class', "pure-u-1-2 pure-u-md-1-4 pure-u-lg-1-8 booksMedia");
+        newDivImg.setAttribute('class', " booksMedia");
         var clonedImg =(imgInDiv).clone().removeClass().addClass('pure-img-responsive');
 
         document.body.append(clonedImg);
@@ -159,7 +186,8 @@ $(document).ready(function() {
       document.body.appendChild(newSelectBtn);
 
       var newDivWrapper = document.createElement('div');
-      newDivWrapper.setAttribute('class', "email-item email-item-selected pure-g");
+      newDivWrapper.setAttribute('class', "infowrapper");
+      newDivWrapper.setAttribute('style', "display: inline-flex; margin-top: .5rem; border-bottom: .15em solid #3d444963;");
       // newDivWrapper.id = 'container'+index;
       newDivWrapper.appendChild(imgDivPure);
       newDivWrapper.appendChild(infoNodeDiv);
