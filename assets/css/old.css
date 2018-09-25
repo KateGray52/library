@@ -34,6 +34,10 @@ body {
 }
 
 
+#sidebar {
+	background: rgba(222, 225, 226, 0.95) !important;
+}
+
 #banner {
 	    padding: 2rem !important;
 }
@@ -53,7 +57,7 @@ body {
 }
 
 .booksMedia img {
-	border-radius: 1rem;
+	border-radius: .5rem;
   position: absolute;
   bottom: 0;
 }
@@ -66,7 +70,7 @@ body {
 
 .fa-times {
 	background: #ffffffb3;
-	border-radius: .1em;
+border-radius: .1em;
   bottom: 0;
   left: 0;
   position: absolute;
@@ -210,7 +214,8 @@ input, select, textarea {
 /* Type */
 
 	body, input, select, textarea {
-		color: #7f888f;
+		/* color: #7f888f; */
+		color: #3d4449d1;
 		font-family: "Open Sans", sans-serif;
 		font-size: 13pt;
 		font-weight: 400;
@@ -2094,26 +2099,6 @@ input, select, textarea {
 		opacity: 1.0;
 	}
 
-/* Box */
-
-	.box {
-		border-radius: 0.375em;
-		border: solid 1px rgba(210, 215, 217, 0.75);
-		margin-bottom: 2em;
-		padding: 1.5em;
-	}
-
-		.box > :last-child,
-		.box > :last-child > :last-child,
-		.box > :last-child > :last-child > :last-child {
-			margin-bottom: 0;
-		}
-
-		.box.alt {
-			border: 0;
-			border-radius: 0;
-			padding: 0;
-		}
 
 /* Icon */
 
@@ -2760,31 +2745,6 @@ input, select, textarea {
 			width: calc(33.3333333333% - 6em);
 		}
 
-			/* .posts article:before {
-				background: rgba(210, 215, 217, 0.75);
-				content: '';
-				display: block;
-				height: calc(100% + 6em);
-				left: -3em;
-				position: absolute;
-				top: 0;
-				width: 1px;
-			} */
-
-			/* .posts article:after {
-				background: rgba(210, 215, 217, 0.75);
-				bottom: -3em;
-				content: '';
-				display: block;
-				height: 1px;
-				position: absolute;
-				right: 0;
-				width: calc(100% + 6em);
-			} */
-
-			/* .posts article > :last-child {
-				margin-bottom: 0;
-			} */
 
 			.posts article .image {
 				display: block;
@@ -2798,61 +2758,13 @@ input, select, textarea {
 
 		@media screen and (min-width: 1681px) {
 
-			/* .posts article:nth-child(3n + 1):before {
-				display: none;
-			}
-
-			.posts article:nth-child(3n + 1):after {
-				width: 100%;
-			}
-
-			.posts article:nth-last-child(1), .posts article:nth-last-child(2), .posts article:nth-last-child(3) {
-				margin-bottom: 0;
-			} */
-
-				/* .posts article:nth-last-child(1):before, .posts article:nth-last-child(2):before, .posts article:nth-last-child(3):before {
-					height: 100%;
-				}
-
-				.posts article:nth-last-child(1):after, .posts article:nth-last-child(2):after, .posts article:nth-last-child(3):after {
-					display: none;
-				} */
-
 		}
 
 		@media screen and (max-width: 1680px) {
 
-			/* .posts article {
-				width: calc(50% - 6em);
-			}
-
-				.posts article:nth-last-child(3) {
-					margin-bottom: 6em;
-				} */
-
 		}
 
 		@media screen and (min-width: 481px) and (max-width: 1680px) {
-
-			/* .posts article:nth-child(2n + 1):before {
-				display: none;
-			}
-
-			.posts article:nth-child(2n + 1):after {
-				width: 100%;
-			}
-
-			.posts article:nth-last-child(1), .posts article:nth-last-child(2) {
-				margin-bottom: 0;
-			} */
-
-				/* .posts article:nth-last-child(1):before, .posts article:nth-last-child(2):before {
-					height: 100%;
-				}
-
-				.posts article:nth-last-child(1):after, .posts article:nth-last-child(2):after {
-					display: none;
-				} */
 
 		}
 
@@ -2868,19 +2780,6 @@ input, select, textarea {
 					width: calc(50% - 4.5em);
 				}
 
-					/* .posts article:before {
-						height: calc(100% + 4.5em);
-						left: -2.25em;
-					}
-
-					.posts article:after {
-						bottom: -2.25em;
-						width: calc(100% + 4.5em);
-					}
-
-					.posts article:nth-last-child(3) {
-						margin-bottom: 4.5em;
-					} */
 
 		}
 
@@ -2896,22 +2795,6 @@ input, select, textarea {
 					/* margin: 0 0 4.5em 0; */
 					width: 100%;
 				}
-
-					/* .posts article:before {
-						display: none;
-					}
-
-					.posts article:after {
-						width: 100%;
-					}
-
-					.posts article:last-child {
-						margin-bottom: 0;
-					}
-
-						.posts article:last-child:after {
-							display: none;
-						} */
 
 		}
 
@@ -3343,8 +3226,8 @@ input, select, textarea {
 			-ms-flex-shrink: 0;
 			flex-shrink: 0;
 			display: block;
-			margin: 0 0 2em 4em;
-			width: 50%;
+			/* margin: 0 0 2em 4em; */
+			/* width: 50%; */
 		}
 
 			#banner .image img {
@@ -3394,7 +3277,7 @@ input, select, textarea {
 					-webkit-flex-shrink: 0;
 					-ms-flex-shrink: 0;
 					flex-shrink: 0;
-					margin: 0 0 4em 0;
+					/* margin: 0 0 4em 0; */
 					height: 25em;
 					max-height: 50vh;
 					min-height: 18em;

@@ -51,8 +51,8 @@ $(document).ready(function() {
     });
 
   $("#buttonForSearch").click(function () {
-    // $("#list").html("");
-    $('#list :not(:first-child)').remove();
+    $("#list").html("");
+    // $('#list :not(:first-child)').remove();
     // $('#list:not(:first-child)').html("");
 
     var searchInput  = $("#searchBooks").val();
@@ -137,6 +137,8 @@ $(document).ready(function() {
       var imgForList = document.createElement("IMG");
       imgForList.setAttribute('src', bookImg);
       imgForList.setAttribute('class', 'email-avatar');
+      imgForList.setAttribute('style', 'border-radius: .5rem;');
+
       // imgForList.setAttribute('id', 'imageId' + index);
       document.body.appendChild(imgForList);
       imgDivPure.appendChild(imgForList);
@@ -185,7 +187,6 @@ $(document).ready(function() {
 
 
         var clonedImg =(imgInDiv).clone().removeClass().addClass('pure-img-responsive');
-        document.body.append(clonedImg);
         $(clonedImg).appendTo(newDivImg);
 
         var newDeleteIcon = document.createElement('i');
@@ -193,13 +194,14 @@ $(document).ready(function() {
         $(newDeleteIcon).click(function () {
           $(this).closest("div").remove();
         });
-        // document.body.append(newDeleteIcon);
         $(newDeleteIcon).appendTo(newDivImg);
 
 
 
         var newPanelDiv = document.createElement('div');
         newPanelDiv.setAttribute('class', "panel booksMedia panel");
+        newPanelDiv.setAttribute('style', "padding-top: 3rem;");
+
         var clonedInfo = (infoChildren).clone();
 
         $(clonedInfo).appendTo(newPanelDiv);
