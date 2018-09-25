@@ -44,22 +44,6 @@ $(document).ready(function() {
     };
   });
 
-  // $(".openBtn").click(function () {
-  //   document.getElementById("mySidenav").style.width = "30%";
-  //    document.getElementById("main").style.marginLeft = "30%";
-  // });
-
-  // $(".openBtn").click(function () {
-  //    document.getElementById("list").style.display = "block";
-  //    document.getElementById("list").style.padding = "0";
-  //     document.getElementById("main").style.marginLeft = "30%";
-  // });
-  //
-  // $("#closeBtn").click(function () {
-  //    document.getElementById("list").style.display = "none";
-  //     document.getElementById("main").style.marginLeft = "0";
-  // });
-
 
 
   $(function(){
@@ -114,14 +98,15 @@ $(document).ready(function() {
 
       var infoNodeDiv = document.createElement("div");
       infoNodeDiv.setAttribute("class", "infogroup")
+
       var bookpara = document.createElement("div");
       bookpara.setAttribute("class", "email-name")
       bookpara.setAttribute("style", "font-weight: bold")
+
       var authorpara = document.createElement("div");
       authorpara.setAttribute("class", "email-desc")
       var booknode=document.createTextNode(bookTitle);
       var authornode=document.createTextNode(author);
-
       bookpara.appendChild(booknode);
       authorpara.appendChild(authornode);
 
@@ -162,6 +147,9 @@ $(document).ready(function() {
       newSelectBtn.setAttribute("style", "margin-top: 8rem;")
 
 
+
+
+
       newSelectBtn.addEventListener("click", function(){
         var el = $(this);
         console.log(el);
@@ -170,15 +158,54 @@ $(document).ready(function() {
         var imgsibling = (imgparent).children('.pure-u');
         var imgInDiv = (imgsibling).children('img');
 
-        var GalleryDiv = document.getElementById('bookImgMain');
-        var newDivImg = document.createElement('div');
-        newDivImg.setAttribute('class', " booksMedia");
-        var clonedImg =(imgInDiv).clone().removeClass().addClass('pure-img-responsive');
+        var infoSibling =  (imgparent).children('.infogroup');
+        console.log(infoSibling);
+        var infoChildren =  (infoSibling).children();
+          console.log(infoChildren);
 
+        var GalleryDiv = document.getElementById('bookImgMain');
+
+
+        var newDivImg = document.createElement('div');
+        newDivImg.setAttribute('class', "booksMedia accordionDisplay");
+
+        $(newDivImg).click(function () {
+          var acc = $(this);
+          var i;
+          for (i = 0; i < acc.length; i++) {
+                  this.classList.toggle("active");
+                  var panel = this.nextElementSibling;
+                  if (panel.style.display === "block") {
+                      panel.style.display = "none";
+                  } else {
+                      panel.style.display = "block";
+                  }
+          };
+        });
+
+
+        var clonedImg =(imgInDiv).clone().removeClass().addClass('pure-img-responsive');
         document.body.append(clonedImg);
         $(clonedImg).appendTo(newDivImg);
 
+        var newDeleteIcon = document.createElement('i');
+        newDeleteIcon.setAttribute('class', "fa fa-times deleteBtn");
+        $(newDeleteIcon).click(function () {
+          $(this).closest("div").remove();
+        });
+        // document.body.append(newDeleteIcon);
+        $(newDeleteIcon).appendTo(newDivImg);
+
+
+
+        var newPanelDiv = document.createElement('div');
+        newPanelDiv.setAttribute('class', "panel booksMedia panel");
+        var clonedInfo = (infoChildren).clone();
+
+        $(clonedInfo).appendTo(newPanelDiv);
+        $(GalleryDiv).prepend(newPanelDiv);
         $(GalleryDiv).prepend(newDivImg);
+
       });
 
       var newselectnode = document.createTextNode("select");
