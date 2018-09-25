@@ -12,14 +12,10 @@ The add books function uses Google Books API to find the specific book your look
 This can be used to keep track or books you own, make a list of books you want, keep track of loaned items, or get information.
 
 
-## Getting Started
-
-To use clone or download and open in your text editor.
-
 
 ## Built With
 
-* [Pure.Css](https://purecss.io/) - Layout
+* [Html5](https://html5up.net/editorial) - Layout
 * [Google Books Api](https://developers.google.com/books/) - API
 
 
