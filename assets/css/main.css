@@ -46,6 +46,10 @@ body {
   position: relative;
   height: 200px;
   width: 150px;
+
+      margin-top: 1em;
+      color: slategray;
+          font-weight: bold;
 }
 
 .booksMedia img {
@@ -54,10 +58,26 @@ body {
   bottom: 0;
 }
 
+
+.booksMedia a {
+text-transform: capitalize;
+font-size: 12px;
+letter-spacing: .15em;
+font-weight: bold;
+
+    box-shadow: none;
+
+}
+
 .panel{
   padding: 0 18px;
   display: none;
   overflow: hidden;
+
+      background: #eee;
+    border-radius: 1em;
+    margin-right: 1em;
+
 }
 
 .fa-times {
@@ -84,6 +104,19 @@ button {
 #catheader {
 	    padding-right: 3rem !important;
 }
+
+
+
+
+
+	@media screen and (max-width: 480px) {
+
+		#catSection {
+			display: none !important;
+		}
+
+	}
+
 
 #searchbar {
 	display: inline-flex;
@@ -930,6 +963,8 @@ input {
 		border-bottom: solid 5px #f56a6a;
 		padding: 6em 0 1em 0;
 		position: relative;
+
+		    padding: 2em;
 	}
 
 		#header > * {
@@ -943,6 +978,8 @@ input {
 		#header .logo {
 			border-bottom: 0;
 			color: inherit;
+			display: flex;
+			float: left;
 			font-family: "Roboto Slab", serif;
 			font-size: 1.125em;
 		}
@@ -954,7 +991,7 @@ input {
 		@media screen and (max-width: 1680px) {
 
 			#header {
-				padding-top: 5em;
+				/*padding-top: 5em; */
 			}
 
 		}
@@ -977,6 +1014,18 @@ input {
 					right: -0.5em;
 					top: 0;
 				}
+
+		}
+
+		@media screen and (max-width: 480px) {
+
+			#header {
+				display: none;
+			}
+
+			#banner {
+                padding: 1.5 !important  ;
+               }
 
 		}
 
