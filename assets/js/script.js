@@ -27,6 +27,8 @@ $( document ).ready( function () {
 	//delete button for bookcase display img div
 	$( ".deleteBtn" ).click( function () {
 		$( this ).closest( "div" ).remove();
+//		$( this ).closest( ".panel" ).remove();
+//		 $(this).next(".experience").toggle();
 	} );
 
 	//function for bookcase display accordian and panels
