@@ -24,12 +24,15 @@ $( document ).ready( function () {
 	// document.body.appendChild(newDelBtn);
 
 
+
 	//delete button for bookcase display img div
 	$( ".deleteBtn" ).click( function () {
-		$( this ).closest( "div" ).remove();
-//		$( this ).closest( ".panel" ).remove();
-//		 $(this).next(".experience").toggle();
+          var parentDivToRemove = 	$( this ).closest( "div" );
+		var panelSibling = parentDivToRemove.next("div").remove();
+        $( this ).closest( "div" ).remove();
 	} );
+
+
 
 	//function for bookcase display accordian and panels
 	$( ".accordionDisplay" ).click( function () {
