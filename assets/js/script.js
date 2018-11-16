@@ -3,18 +3,6 @@ console.log( "connected" );
 $( document ).ready( function () {
 
 
-	// newEditBtn.addEventListener("click", function() {
-	//   var x = document.getElementsByClassName("catogories");
-	//   if (x.contentEditable == "true") {
-	//       x.contentEditable = "false";
-	//       newEditBtn.innerHTML = "Edit";
-	//   } else {
-	//       x.contentEditable = "true";
-	//       newEditBtn.innerHTML = "Save";
-	//   }
-	// });
-
-
 	var newDelBtn = document.createElement( "BUTTON" );
 	newDelBtn.addEventListener( "click", function () {
 		document.getElementById( 'tableId' ).deleteRow( this.parentNode.parentNode.rowIndex )
@@ -24,14 +12,12 @@ $( document ).ready( function () {
 	// document.body.appendChild(newDelBtn);
 
 
-
 	//delete button for bookcase display img div
 	$( ".deleteBtn" ).click( function () {
           var parentDivToRemove = 	$( this ).closest( "div" );
 		var panelSibling = parentDivToRemove.next("div").remove();
         $( this ).closest( "div" ).remove();
 	} );
-
 
 
 	//function for bookcase display accordian and panels
@@ -60,9 +46,6 @@ $( document ).ready( function () {
 	//search button for side bar input
 	$( "#buttonForSearch" ).click( function () {
 		$( "#list" ).html( "" );
-		// $('#list :not(:first-child)').remove();
-		// $('#list:not(:first-child)').html("");
-
 		var searchInput = $( "#searchBooks" ).val();
 		var numberResponse = "6";
 		var bookApiSearch = "https://www.googleapis.com/books/v1/volumes?q=" + searchInput + "&maxResults=" + numberResponse;
@@ -87,8 +70,6 @@ $( document ).ready( function () {
 					var bookSrc = responsetext[ index ].volumeInfo.imageLinks.thumbnail;
 					var bookCat = responsetext[ index ].volumeInfo.categories;
 					var bookInfo = responsetext[ index ].volumeInfo.infoLink;
-					// console.log(bookCat);
-					// console.log(bookInfo);
 					addDiv( bookAuthor, bookTitle, bookSrc, index, bookCat, bookInfo );
 					//end of response loop
 				} );
@@ -108,51 +89,66 @@ $( document ).ready( function () {
 		infoNodeDiv.setAttribute( "class", "infogroup" )
 
 		//div for title
-		var bookpara = document.createElement( "div" );
-		bookpara.setAttribute( "class", "email-name" )
-		bookpara.setAttribute( "style", "font-weight: bold" )
-		var booknode = document.createTextNode( bookTitle );
-		bookpara.appendChild( booknode );
 
-		//making div to add author in
-		var authorpara = document.createElement( "div" );
-		authorpara.setAttribute( "class", "email-desc" )
-		var authornode = document.createTextNode( author );
-		authorpara.appendChild( authornode );
-
-		//div for info link
-		var infolinkpara = document.createElement( "A" );
-		var infonode = document.createTextNode( "Info" );
-		infolinkpara.setAttribute( "href", bookInfo );
-		infolinkpara.setAttribute( "style", "border-bottom: none" );
-		infolinkpara.appendChild( infonode );
-
-		//div for category
-		var catpara = document.createElement( "div" );
-		catpara.setAttribute( "class", "catpara" )
-		catpara.setAttribute( "style", "font-style: italic;" )
-		var catnode = document.createTextNode( bookCat );
-		catpara.appendChild( catnode );
-		// infopara.appendChild(infonode);
-
-		//appending indivdual divs to main
-		infoNodeDiv.appendChild( bookpara );
-		infoNodeDiv.appendChild( authorpara );
-		infoNodeDiv.appendChild( catpara );
-		infoNodeDiv.appendChild( infolinkpara );
+//		var bookpara = $ ("<div class='book-name' style='font-weight: bold'></div>")
+//
+//		var bookpara = document.createElement( "div" );
+//		bookpara.setAttribute( "class", "book-name" )
+//		bookpara.setAttribute( "style", "font-weight: bold" )
+//		var booknode = document.createTextNode( bookTitle );
+//		bookpara.appendChild( booknode );
+//
 
 
-		//make image for search list
-		var imgDivPure = document.createElement( "div" );
-		imgDivPure.setAttribute( 'class', "pure-u" )
-		var imgForList = document.createElement( "IMG" );
-		imgForList.setAttribute( 'src', bookImg );
-		imgForList.setAttribute( 'class', 'email-avatar' );
-		imgForList.setAttribute( 'style', 'border-radius: .5rem;' );
+        var bookpara =  $( "<div></div>" )
+          .addClass( "book-name" )
+          .text(bookTitle)
+    .appendTo( infoNodeDiv );
 
-		// imgForList.setAttribute('id', 'imageId' + index);
-		document.body.appendChild( imgForList );
-		imgDivPure.appendChild( imgForList );
+      var authorpara =  $( "<div></div>" )
+          .addClass( "author-desc" )
+          .text( author)
+    .appendTo( infoNodeDiv );
+
+var infolinkpara =  $( "<a> </a>" )
+          .attr("href", bookInfo)
+          .text( "Info")
+          .appendTo( infoNodeDiv );
+
+     var catpara =  $( "<div></div>" )
+          .addClass( "catpara" )
+          .text( bookCat )
+    .appendTo( infoNodeDiv );
+
+
+
+var imgDivPure =  $( "<div></div>" )
+          .addClass( "pure-u" );
+//          .text( bookCat );
+//    .appendTo( newDivWrapper);
+
+
+
+var imgForList=  $( "< /img>" )
+    .attr("src", bookImg)
+          .addClass( "email-avatar" )
+//          .text( bookCat )
+    .appendTo( imgDivPure );
+
+
+
+//		//make image for search list
+//		var imgDivPure = document.createElement( "div" );
+//		imgDivPure.setAttribute( 'class', "pure-u" )
+//		var imgForList = document.createElement( "IMG" );
+//		imgForList.setAttribute( 'src', bookImg );
+//		imgForList.setAttribute( 'class', 'email-avatar' );
+////		imgForList.setAttribute( 'style', 'border-radius: .5rem;' );
+//
+//		// imgForList.setAttribute('id', 'imageId' + index);
+//		document.body.appendChild( imgForList );
+//		imgDivPure.appendChild( imgForList );
+
 
 		//select button to add to bookcase display
 		var newSelectBtn = document.createElement( "BUTTON" );
@@ -171,11 +167,11 @@ $( document ).ready( function () {
 
 			//getting info from infoSibling
 			var infoSibling = ( imgparent ).children( '.infogroup' );
-			console.log( infoSibling );
+//			console.log( infoSibling );
 			var infoChildren = ( infoSibling ).children();
-			console.log( infoChildren );
+//			console.log( infoChildren );
 
-			//where it will be displayef
+			//where it will be displayed
 			var GalleryDiv = document.getElementById( 'bookImgMain' );
 
 			//div for new image
@@ -234,9 +230,9 @@ $( document ).ready( function () {
 		newDivWrapper.setAttribute( 'class', "infowrapper" );
 		newDivWrapper.setAttribute( 'style', "display: inline-flex; margin-top: .5rem; border-bottom: .15em solid #3d444963;" );
 		// newDivWrapper.id = 'container'+index;
-		newDivWrapper.appendChild( imgDivPure );
-		newDivWrapper.appendChild( infoNodeDiv );
-		newDivWrapper.appendChild( newSelectBtn );
+		newDivWrapper.append( imgDivPure );
+		newDivWrapper.append( infoNodeDiv );
+		newDivWrapper.append( newSelectBtn );
 
 		//adding search divwrapper to list
 		ListRef.appendChild( newDivWrapper );

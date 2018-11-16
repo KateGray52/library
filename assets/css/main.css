@@ -22,6 +22,12 @@ body {
 	line-height: 1;
 }
 
+
+img {
+border-radius: .5rem;
+}
+
+
 #bookcaseSection {
   padding-top: 0rem !important;
 }
@@ -359,8 +365,10 @@ input {
 	header.major > :last-child {
 		border-bottom: solid 3px #f56a6a;
 		display: inline-block;
-		margin: 0 0 2em 0;
+		/* margin: 0 0 2em 0; */
 		padding: 0 0.75em 0.5em 0;
+
+		    float: left;
 	}
 
 /* Form */
