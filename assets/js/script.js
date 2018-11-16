@@ -14,11 +14,10 @@ $( document ).ready( function () {
 
 	//delete button for bookcase display img div
 	$( ".deleteBtn" ).click( function () {
-          var parentDivToRemove = 	$( this ).closest( "div" );
-		var panelSibling = parentDivToRemove.next("div").remove();
-        $( this ).closest( "div" ).remove();
+		var parentDivToRemove = $( this ).closest( "div" );
+		var panelSibling = parentDivToRemove.next( "div" ).remove();
+		$( this ).closest( "div" ).remove();
 	} );
-
 
 	//function for bookcase display accordian and panels
 	$( ".accordionDisplay" ).click( function () {
@@ -34,7 +33,6 @@ $( document ).ready( function () {
 			}
 		};
 	} );
-
 
 	//click on search input and it highlights
 	$( function () {
@@ -90,67 +88,36 @@ $( document ).ready( function () {
 
 		//div for title
 
-//		var bookpara = $ ("<div class='book-name' style='font-weight: bold'></div>")
-//
-//		var bookpara = document.createElement( "div" );
-//		bookpara.setAttribute( "class", "book-name" )
-//		bookpara.setAttribute( "style", "font-weight: bold" )
-//		var booknode = document.createTextNode( bookTitle );
-//		bookpara.appendChild( booknode );
-//
+		var bookpara = $( "<div></div>" )
+			.addClass( "book-name" )
+			.text( bookTitle )
+			.appendTo( infoNodeDiv );
+
+		var authorpara = $( "<div></div>" )
+			.addClass( "author-desc" )
+			.text( author )
+			.appendTo( infoNodeDiv );
+
+		var infolinkpara = $( "<a> </a>" )
+			.attr( "href", bookInfo )
+			.text( "Info" )
+			.appendTo( infoNodeDiv );
+
+		var catpara = $( "<div></div>" )
+			.addClass( "catpara" )
+			.text( bookCat )
+			.appendTo( infoNodeDiv );
 
 
-        var bookpara =  $( "<div></div>" )
-          .addClass( "book-name" )
-          .text(bookTitle)
-    .appendTo( infoNodeDiv );
+		//make image for search list
+		var imgDivPure = document.createElement( "div" );
+		imgDivPure.setAttribute( 'class', "pure-u" )
 
-      var authorpara =  $( "<div></div>" )
-          .addClass( "author-desc" )
-          .text( author)
-    .appendTo( infoNodeDiv );
+		var img = $( '<img class="email-avatar">' );
+		img.attr( 'src', bookImg );
+		img.appendTo( imgDivPure );
 
-var infolinkpara =  $( "<a> </a>" )
-          .attr("href", bookInfo)
-          .text( "Info")
-          .appendTo( infoNodeDiv );
-
-     var catpara =  $( "<div></div>" )
-          .addClass( "catpara" )
-          .text( bookCat )
-    .appendTo( infoNodeDiv );
-
-
-
-var imgDivPure =  $( "<div></div>" )
-          .addClass( "pure-u" );
-//          .text( bookCat );
-//    .appendTo( newDivWrapper);
-
-
-
-var imgForList=  $( "< /img>" )
-    .attr("src", bookImg)
-          .addClass( "email-avatar" )
-//          .text( bookCat )
-    .appendTo( imgDivPure );
-
-
-
-//		//make image for search list
-//		var imgDivPure = document.createElement( "div" );
-//		imgDivPure.setAttribute( 'class', "pure-u" )
-//		var imgForList = document.createElement( "IMG" );
-//		imgForList.setAttribute( 'src', bookImg );
-//		imgForList.setAttribute( 'class', 'email-avatar' );
-////		imgForList.setAttribute( 'style', 'border-radius: .5rem;' );
-//
-//		// imgForList.setAttribute('id', 'imageId' + index);
-//		document.body.appendChild( imgForList );
-//		imgDivPure.appendChild( imgForList );
-
-
-		//select button to add to bookcase display
+		//		//select button to add to bookcase display
 		var newSelectBtn = document.createElement( "BUTTON" );
 		newSelectBtn.setAttribute( "class", "button small" )
 		newSelectBtn.setAttribute( "style", "margin-top: 8rem;" )
@@ -167,10 +134,7 @@ var imgForList=  $( "< /img>" )
 
 			//getting info from infoSibling
 			var infoSibling = ( imgparent ).children( '.infogroup' );
-//			console.log( infoSibling );
 			var infoChildren = ( infoSibling ).children();
-//			console.log( infoChildren );
-
 			//where it will be displayed
 			var GalleryDiv = document.getElementById( 'bookImgMain' );
 
@@ -205,19 +169,16 @@ var imgForList=  $( "< /img>" )
 			} );
 			$( newDeleteIcon ).appendTo( newDivImg );
 
-
-			// panel for accordion
-			var newPanelDiv = document.createElement( 'div' );
-			newPanelDiv.setAttribute( 'class', "panel booksMedia panel" );
-			newPanelDiv.setAttribute( 'style', "padding-top: 3rem;" );
-			// geting info to put in panel
 			var clonedInfo = ( infoChildren ).clone();
+			var newPanelDiv = $( "<div></div>" )
+				.addClass( "panel booksMedia panel" )
 
-			//adding image div and panel to bookcase display
+				.appendTo( GalleryDiv )
+
+			//			//adding image div and panel to bookcase display
 			$( clonedInfo ).appendTo( newPanelDiv );
 			$( GalleryDiv ).prepend( newPanelDiv );
 			$( GalleryDiv ).prepend( newDivImg );
-
 		} );
 
 		//select button for side search
@@ -230,15 +191,11 @@ var imgForList=  $( "< /img>" )
 		newDivWrapper.setAttribute( 'class', "infowrapper" );
 		newDivWrapper.setAttribute( 'style', "display: inline-flex; margin-top: .5rem; border-bottom: .15em solid #3d444963;" );
 		// newDivWrapper.id = 'container'+index;
-		newDivWrapper.append( imgDivPure );
-		newDivWrapper.append( infoNodeDiv );
-		newDivWrapper.append( newSelectBtn );
+		newDivWrapper.append( imgDivPure, infoNodeDiv, newSelectBtn );
 
 		//adding search divwrapper to list
 		ListRef.appendChild( newDivWrapper );
-
 	};
-
 
 	//end of document ready
 } );;
