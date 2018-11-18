@@ -19,20 +19,28 @@ $( document ).ready( function () {
 		$( this ).closest( "div" ).remove();
 	} );
 
+
+
+
 	//function for bookcase display accordian and panels
 	$( ".accordionDisplay" ).click( function () {
 		var acc = $( this );
 		var i;
 		for ( i = 0; i < acc.length; i++ ) {
+
+
 			this.classList.toggle( "active" );
 			var panel = this.nextElementSibling;
-			if ( panel.style.display === "block" ) {
+
+			if ( panel.style.display === "inline-grid" ) {
 				panel.style.display = "none";
 			} else {
-				panel.style.display = "block";
+				panel.style.display = "inline-grid";
+
 			}
 		};
 	} );
+
 
 	//click on search input and it highlights
 	$( function () {
@@ -103,10 +111,10 @@ $( document ).ready( function () {
 			.text( "Info" )
 			.appendTo( infoNodeDiv );
 
-		var catpara = $( "<div></div>" )
-			.addClass( "catpara" )
-			.text( bookCat )
-			.appendTo( infoNodeDiv );
+//		var catpara = $( "<div></div>" )
+//			.addClass( "catpara" )
+//			.text( bookCat )
+//			.appendTo( infoNodeDiv );
 
 
 		//make image for search list
@@ -125,19 +133,17 @@ $( document ).ready( function () {
 
 		// how the button displays info/ what it displays
 		newSelectBtn.addEventListener( "click", function () {
-			var el = $( this );
-			console.log( el );
+//			var el = $( this );
 			//retrieve image by nav to parent then to img div
-			var imgparent = ( el ).parent();
-			var imgsibling = ( imgparent ).children( '.pure-u' );
+//			var imgparent = $( this ).parent();
+			var imgsibling = $( this ).parent().children( '.pure-u' );
 			var imgInDiv = ( imgsibling ).children( 'img' );
-
 			//getting info from infoSibling
-			var infoSibling = ( imgparent ).children( '.infogroup' );
+//			var infoSibling = ( imgparent ).children( '.infogroup' );
+			var infoSibling =  $( this ).parent().children( '.infogroup' );
 			var infoChildren = ( infoSibling ).children();
 			//where it will be displayed
 			var GalleryDiv = document.getElementById( 'bookImgMain' );
-
 			//div for new image
 			var newDivImg = document.createElement( 'div' );
 			newDivImg.setAttribute( 'class', "booksMedia accordionDisplay" );

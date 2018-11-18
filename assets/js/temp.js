@@ -50,3 +50,68 @@
 //
 //		//appending indivdual divs to main
 //		infoNodeDiv.append( catpara);
+
+
+
+//		var bookpara = $ ("<div class='book-name' style='font-weight: bold'></div>")
+//
+//		var bookpara = document.createElement( "div" );
+//		bookpara.setAttribute( "class", "book-name" )
+//		bookpara.setAttribute( "style", "font-weight: bold" )
+//		var booknode = document.createTextNode( bookTitle );
+//		bookpara.appendChild( booknode );
+//
+
+
+
+//		var imgForList = document.createElement( "IMG" );
+//		imgForList.setAttribute( 'src', bookImg );
+//		imgForList.setAttribute( 'class', 'email-avatar' );
+//
+//		document.body.appendChild( imgForList );
+//		imgDivPure.appendChild( imgForList );
+
+
+
+//            .appendTo( clonedInfo);
+
+
+
+
+//			// panel for accordion
+//			var newPanelDiv = document.createElement( 'div' );
+//			newPanelDiv.setAttribute( 'class', "panel booksMedia panel" );
+//			newPanelDiv.setAttribute( 'style', "padding-top: 3rem;" );
+//			// geting info to put in panel
+//
+
+
+		//		newDivWrapper.append( infoNodeDiv );
+		//		newDivWrapper.append( newSelectBtn );
+
+
+
+
+
+
+			var accDiv = $(".accordionDisplay").not(this);
+
+			 var isVisible = $(accDiv ).is( ":visible" );
+
+			 if ( accDiv === isVisible ) {
+				console.log("yes");
+			} else {
+			console.log("no");
+			}
+//			  var isVisible = $(accDiv ).is( ":visible" );
+//
+//            var isHidden = $(accDiv).is( ":hidden" );
+
+//			console.log(accDiv);
+//			var accDivPanel = accDiv.siblings("")
+//			console.log(accDivPanel);
+
+//            if ( accDiv.class === "active" ) {
+//				accDiv.toggle();
+//			} else {
+//			}
