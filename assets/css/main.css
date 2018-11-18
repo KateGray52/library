@@ -53,8 +53,7 @@ border-radius: .5rem;
   height: 200px;
   width: 150px;
 
-  margin-top: 1em;
-  color: slategray;
+  rgba(0,0,0,0.5);
   font-weight: bold;
   justify-content: flex-end;
       display: flex;
@@ -83,17 +82,18 @@ font-weight: bold;
   display: inline-grid;
   overflow: hidden;
 
-      background: #eee;
-    border-radius: .5em;
-    margin-right: 1em;
-text-align: center;
-        padding-top: 2em;
-            border: solid #ccc 1px;
+     background: #eee;
+    border-radius: .75em;
+    margin-right: 2px;
+    text-align: center;
+      padding-top: 2em;
+       border: solid #ccc 1px;
+       margin-left: 5px;
+         width: 120px;
 
-            /*padding: 0 2px;*/
-            width: 100px;
+    /*padding: 0 2px;*/
 
-            /*display: inline-grid;*/
+    /*display: inline-grid;*/
 
 }
 
@@ -691,7 +691,8 @@ input {
 		@media screen and (max-width: 1680px) {
 
 			#main > .inner {
-				padding: 0 5em 0.1em 5em ;
+				/* padding: 0 5em 0.1em 5em ; */
+				padding: 0 5em 0.1em 2em ;
 			}
 
 				#main > .inner > section {
@@ -1100,6 +1101,18 @@ input {
 
 		}
 
+
+.infogroup {
+display: inline-grid;
+font-size: 14px;
+font-weight: 600;
+    padding-left: 6px;
+
+}
+
+.author-desc {
+font-style: italic;
+}
 /* Footer */
 
 /* Menu */

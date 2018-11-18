@@ -36,7 +36,6 @@ $( document ).ready( function () {
 				panel.style.display = "none";
 			} else {
 				panel.style.display = "inline-grid";
-
 			}
 		};
 	} );
@@ -91,44 +90,60 @@ $( document ).ready( function () {
 		var ListRef = document.getElementById( 'list' )
 
 		//div for title, author, info link and category
-		var infoNodeDiv = document.createElement( "div" );
-		infoNodeDiv.setAttribute( "class", "infogroup" )
+		var infoGroupDiv = document.createElement( "div" );
+		infoGroupDiv.setAttribute( "class", "infogroup" )
 
 		//div for title
 
 		var bookpara = $( "<div></div>" )
 			.addClass( "book-name" )
 			.text( bookTitle )
-			.appendTo( infoNodeDiv );
+			.appendTo( infoGroupDiv );
 
 		var authorpara = $( "<div></div>" )
 			.addClass( "author-desc" )
 			.text( author )
-			.appendTo( infoNodeDiv );
+			.appendTo( infoGroupDiv );
 
 		var infolinkpara = $( "<a> </a>" )
 			.attr( "href", bookInfo )
 			.text( "Info" )
-			.appendTo( infoNodeDiv );
-
-//		var catpara = $( "<div></div>" )
-//			.addClass( "catpara" )
-//			.text( bookCat )
-//			.appendTo( infoNodeDiv );
+			.appendTo( infoGroupDiv );
 
 
 		//make image for search list
-		var imgDivPure = document.createElement( "div" );
-		imgDivPure.setAttribute( 'class', "pure-u" )
+		var imgDiv = document.createElement( "div" );
+		imgDiv.setAttribute( 'class', "img-div" );
 
-		var img = $( '<img class="email-avatar">' );
+		var img = $( '<img >' );
 		img.attr( 'src', bookImg );
-		img.appendTo( imgDivPure );
+		img.appendTo( imgDiv );
 
-		//		//select button to add to bookcase display
+
+//       var newSelectBtn = $( "<button></button>" )
+//        .attr( "class", "button small"  )
+//        .text( "Select" )
+//        .appendTo( infoGroupDiv );
+
+
+
+
+        	//		//select button to add to bookcase display
 		var newSelectBtn = document.createElement( "BUTTON" );
-		newSelectBtn.setAttribute( "class", "button small" )
-		newSelectBtn.setAttribute( "style", "margin-top: 8rem;" )
+		newSelectBtn.setAttribute( "class", "button small" );
+//		newSelectBtn.setAttribute( "style", "margin-top: 8rem;" );
+
+		//select button for side search
+		var newselectnode = document.createTextNode( "select" );
+		newSelectBtn.appendChild( newselectnode );
+//document.body.appendChild( newSelectBtn );//
+	   infoGroupDiv.appendChild( newSelectBtn );
+
+
+
+
+
+
 
 
 		// how the button displays info/ what it displays
@@ -187,17 +202,25 @@ $( document ).ready( function () {
 			$( GalleryDiv ).prepend( newDivImg );
 		} );
 
+
+
+
+
+
+
+
 		//select button for side search
-		var newselectnode = document.createTextNode( "select" );
-		newSelectBtn.appendChild( newselectnode );
-		document.body.appendChild( newSelectBtn );
+//		var newselectnode = document.createTextNode( "select" );
+//		newSelectBtn.appendChild( newselectnode );
+//		document.body.appendChild( newSelectBtn );
 
 		//div for all side search (info and img and select button) and append children divs
 		var newDivWrapper = document.createElement( 'div' );
 		newDivWrapper.setAttribute( 'class', "infowrapper" );
 		newDivWrapper.setAttribute( 'style', "display: inline-flex; margin-top: .5rem; border-bottom: .15em solid #3d444963;" );
 		// newDivWrapper.id = 'container'+index;
-		newDivWrapper.append( imgDivPure, infoNodeDiv, newSelectBtn );
+//		newDivWrapper.append( imgDiv, infoGroupDiv, newSelectBtn );
+		newDivWrapper.append( imgDiv, infoGroupDiv);
 
 		//adding search divwrapper to list
 		ListRef.appendChild( newDivWrapper );
