@@ -1,23 +1,12 @@
-console.log( "connected" );
-
 $( document ).ready( function () {
 
-    	//click on search input and it highlights
-	$( function () {
-		$( document ).on( 'click', 'input[type=text]', function () {
-			this.select();
-		} );
-	} );
-
-	//delete button for bookcase display img div
-	$( ".deleteBtn" ).click( function () {
+	$( document ).on( 'click', '.deleteBtn', function () {
 		var parentDivToRemove = $( this ).closest( "div" );
 		var panelSibling = parentDivToRemove.next( "div" ).remove();
 		$( this ).closest( "div" ).remove();
 	} );
 
-	//function for bookcase display accordian and panels
-	$( ".accordionDisplay" ).click( function () {
+	$( document ).on( 'click', '.accordionDisplay', function () {
 		var acc = $( this );
 		var i;
 		for ( i = 0; i < acc.length; i++ ) {
@@ -31,8 +20,14 @@ $( document ).ready( function () {
 		};
 	} );
 
+	//click on search input and highlights text
+	$( function () {
+		$( document ).on( 'click', 'input[type=text]', function () {
+			this.select();
+		} );
+	} );
 
-	//search button for side bar input
+	//search button for sidebar input
 	$( "#buttonForSearch" ).click( function () {
 		$( "#list" ).html( "" );
 		var searchInput = $( "#searchBooks" ).val();
@@ -51,7 +46,6 @@ $( document ).ready( function () {
 			success: function ( response ) {
 				var responsetext = response.items;
 
-				//selecting and variables for use
 				$.each( responsetext, function ( index, value ) {
 					var bookTitle = responsetext[ index ].volumeInfo.title;
 					var bookAuthor = responsetext[ index ].volumeInfo.authors;
@@ -67,18 +61,11 @@ $( document ).ready( function () {
 		} );
 	};
 
-
+    //sidebar search results
 	function addDiv( author, bookTitle, bookImg, index, bookCat, bookInfo ) {
 
-
-		var infoGroupDiv = document.createElement( "div" );
-		infoGroupDiv.setAttribute( "class", "infogroup" )
-
-//        var infoGroupDiv = $( "<div></div>" )
-//			.addClass( "infogroup" );
-//
-////			.appendTo( infoGroupDiv );
-
+		var infoGroupDiv = $( "<div></div>" )
+			.addClass( "infogroup" );
 
 		var bookpara = $( "<div></div>" )
 			.addClass( "book-name" )
@@ -95,81 +82,47 @@ $( document ).ready( function () {
 			.text( "Info" )
 			.appendTo( infoGroupDiv );
 
+		var img = $( '<img >' )
+			.attr( 'src', bookImg );
 
-		var imgDiv = document.createElement( "div" );
-		imgDiv.setAttribute( 'class', "img-div" );
+		var imgDiv = $( "<div></div>" );
+		imgDiv.addClass( "img-div" );
+		imgDiv.append( img );
 
-		var img = $( '<img >' );
-		img.attr( 'src', bookImg );
-		img.appendTo( imgDiv );
-
-
-//       var newSelectBtn = $( "<button></button>" )
-//        .attr( "class", "button small"  )
-//        .text( "Select" )
-//        .appendTo( infoGroupDiv );
-
-
-        	//		//select button to add to bookcase display
-		var newSelectBtn = document.createElement( "BUTTON" );
-		newSelectBtn.setAttribute( "class", "button small" );
-
-		//select button for side search
-		var newselectnode = document.createTextNode( "select" );
-		newSelectBtn.appendChild( newselectnode );
-	   infoGroupDiv.appendChild( newSelectBtn );
-
-
-
-		$( newSelectBtn).click( function () {
-
-            var bookImgMainDiv = document.getElementById( 'bookImgMain' );
-
-			var imgInDiv = $( this ).parent().siblings( '.img-div' ).children( 'img' );
-			var clonedImg = ( imgInDiv ).clone();
-            var clonedInfo = $( this ).siblings().clone();
-
-			var newPanelDiv = $( "<div></div>" )
-				.addClass( "panel booksMedia panel" )
-				.append(clonedInfo)
-				.prependTo( bookImgMainDiv );
-
-			var newDivImg = $( "<div></div>" )
-			.addClass( "booksMedia accordionDisplay"  )
-			.append(clonedImg)
+        //create select button to add to bookcase display, with functions for delete and get info
+		var newSelectBtn = $( "<button></button>" )
+			.addClass( "button small" )
+			.text( "Select" )
 			.click( function () {
-				var acc = $( this );
-				var i;
-				for ( i = 0; i < acc.length; i++ ) {
-					this.classList.toggle( "active" );
-					var panel = this.nextElementSibling;
-					if ( panel.style.display === "block" ) {
-						panel.style.display = "none";
-					} else {
-						panel.style.display = "block";
-					}
-				};
-			} );
+				var bookImgMainDiv = document.getElementById( 'bookImgMain' );
+				var imgInDiv = $( this ).parent().siblings( '.img-div' ).children( 'img' );
+				var clonedImg = ( imgInDiv ).clone();
+				var clonedInfo = $( this ).siblings().clone();
 
-			var newDeleteIcon= $( "<i> </i>" )
-			.addClass( "fa fa-times deleteBtn" )
-			.appendTo( newDivImg)
-            .click( function () {
-                var parentDivToRemove = $( this ).closest( "div" );
-                var panelSibling = parentDivToRemove.next( "div" ).remove();
-                $( this ).closest( "div" ).remove();
-            } );
+				var newPanelDiv = $( "<div></div>" )
+					.addClass( "panel booksMedia panel" )
+					.append( clonedInfo )
+					.prependTo( bookImgMainDiv );
 
-			$( bookImgMainDiv ).prepend( newDivImg );
-		} );
+				var newDivImg = $( "<div></div>" )
+					.addClass( "booksMedia accordionDisplay" )
+					.append( clonedImg );
 
-            var ListRef = document.getElementById( 'list' );
+				var newDeleteIcon = $( "<i> </i>" )
+					.addClass( "fa fa-times deleteBtn" )
+					.appendTo( newDivImg );
 
-         	var newDivWrapper = $( "<div></div>" )
+				$( bookImgMainDiv ).prepend( newDivImg );
+
+			} )
+			.appendTo( infoGroupDiv );
+
+
+		var ListRef = document.getElementById( 'list' );
+		var newDivWrapper = $( "<div></div>" )
 			.addClass( "infowrapper" )
-			.css({'display' : 'inline-flex', 'margin-top': '.5rem', 'border-bottom' : '.15em solid #3d444963' })
-			.append( imgDiv, infoGroupDiv)
-			.appendTo(ListRef);
+			.append( imgDiv, infoGroupDiv )
+			.appendTo( ListRef );
 
 	};
 
