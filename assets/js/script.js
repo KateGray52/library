@@ -131,33 +131,22 @@ $( document ).ready( function () {
         	//		//select button to add to bookcase display
 		var newSelectBtn = document.createElement( "BUTTON" );
 		newSelectBtn.setAttribute( "class", "button small" );
-//		newSelectBtn.setAttribute( "style", "margin-top: 8rem;" );
 
 		//select button for side search
 		var newselectnode = document.createTextNode( "select" );
 		newSelectBtn.appendChild( newselectnode );
-//document.body.appendChild( newSelectBtn );//
 	   infoGroupDiv.appendChild( newSelectBtn );
-
-
-
-
 
 
 
 
 		// how the button displays info/ what it displays
 		newSelectBtn.addEventListener( "click", function () {
-//			var el = $( this );
-			//retrieve image by nav to parent then to img div
-//			var imgparent = $( this ).parent();
-			var imgsibling = $( this ).parent().children( '.pure-u' );
+			var imgsibling = $( this ).parent().siblings( '.img-div' );
+			console.log(imgsibling);
 			var imgInDiv = ( imgsibling ).children( 'img' );
-			//getting info from infoSibling
-//			var infoSibling = ( imgparent ).children( '.infogroup' );
-			var infoSibling =  $( this ).parent().children( '.infogroup' );
-			var infoChildren = ( infoSibling ).children();
-			//where it will be displayed
+			var infoSibling =  $( this ).siblings();
+			console.log(infoSibling);
 			var GalleryDiv = document.getElementById( 'bookImgMain' );
 			//div for new image
 			var newDivImg = document.createElement( 'div' );
@@ -190,7 +179,7 @@ $( document ).ready( function () {
 			} );
 			$( newDeleteIcon ).appendTo( newDivImg );
 
-			var clonedInfo = ( infoChildren ).clone();
+			var clonedInfo = ( infoSibling ).clone();
 			var newPanelDiv = $( "<div></div>" )
 				.addClass( "panel booksMedia panel" )
 
@@ -204,22 +193,11 @@ $( document ).ready( function () {
 
 
 
-
-
-
-
-
-		//select button for side search
-//		var newselectnode = document.createTextNode( "select" );
-//		newSelectBtn.appendChild( newselectnode );
-//		document.body.appendChild( newSelectBtn );
-
 		//div for all side search (info and img and select button) and append children divs
 		var newDivWrapper = document.createElement( 'div' );
 		newDivWrapper.setAttribute( 'class', "infowrapper" );
 		newDivWrapper.setAttribute( 'style', "display: inline-flex; margin-top: .5rem; border-bottom: .15em solid #3d444963;" );
 		// newDivWrapper.id = 'container'+index;
-//		newDivWrapper.append( imgDiv, infoGroupDiv, newSelectBtn );
 		newDivWrapper.append( imgDiv, infoGroupDiv);
 
 		//adding search divwrapper to list
