@@ -38,7 +38,7 @@
      position: relative;
      height: 200px;
      width: 150px;
-     rgba(0,0,0,0.5);
+     rgba: (0,0,0,0.5);
      font-weight: bold;
      justify-content: flex-end;
      display: flex;
@@ -74,6 +74,27 @@
     /*display: inline-grid;
     */
 }
+
+@media screen and (max-width: 480px) {
+    .panel {
+        width: 100px;
+        display: inline-grid !important;
+        margin-top: 4px;
+        max-height: 150px;
+
+   }
+   .booksMedia {
+     max-height: 150px;
+     max-width: 130px;
+   }
+
+   .booksMedia img {
+     height: 90%;
+   }
+}
+
+
+
  .fa-times {
      background: whitesmoke;
      border-radius: .15em;
