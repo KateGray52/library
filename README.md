@@ -1,33 +1,29 @@
 # Library App
-> Search and add books to make a Digital library of books you own.
+> Search and add books to make a digital library of books you own.
 
 
-The add books function uses Google Books API to find the specific book your looking for. Then you select to add to your bookshelf. Once they are on your book shelf you can drag to rearrange, click to get more info, add categories, or remove.
+Uses Google Books API to search and select to add to the bookshelf. On the bookshelf click to get more info, or click x to remove.
 
-![](header.png)
+![libary project](https://kategray52.github.io/img/sslib1c.jpg)
 
 
 ## Usage example
 
-This can be used to keep track or books you own, make a list of books you want, keep track of loaned items, or get information.
+Used to keep track of books you own, make a list of books you want, keep track of loaned items, or get more information.
 
 
 
 ## Built With
 
-* [Html5](https://html5up.net/editorial) - Layout
+* [jQuery](https://jquery.com/) - Javascript
 * [Google Books Api](https://developers.google.com/books/) - API
+* [Html5](https://html5up.net/editorial) - Layout
 
 
 ## Author
 
-* **Katherine Kote** - *Initial work* - [KateGray52](https://github.com/KateGray52)
+* [KateGray52](https://github.com/KateGray52)
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-
-## Acknowledgments
-
-* [UnCSS Online](https://uncss-online.com/)
