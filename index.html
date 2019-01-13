@@ -1,99 +1,177 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
-    <title>Digital Library</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+  <title>Digital Library</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
 <body class="is-preload">
-    <!-- Wrapper -->
-    <div id="wrapper">
-        <!-- Main -->
-        <div id="main">
-            <div class="inner">
-                <!-- Header -->
-                <header id="header">
-                    <a href="" class="logo"><strong>Search</strong> </a>
-                </header>
-                <!-- Banner -->
-                <section id="banner">
-                    <div class="content">
-                        <header>
-                            <h1>Digital Library</h1>
-                            <p>Your Personal Collection</p>
-                        </header>
-                    </div>
-                </section>
+  <!-- Wrapper -->
+  <div id="wrapper">
+    <!-- Main -->
+    <div id="main">
+      <div class="inner">
+        <!-- Header -->
+        <header id="header">
+          <a href="" class="logo"><strong>Search</strong> </a>
+        </header>
+        <!-- Banner -->
+        <section id="banner">
+          <div class="content">
+            <header>
+              <h1>Digital Library</h1>
+              <p>Your Personal Collection</p>
+            </header>
+          </div>
+        </section>
 
-                <!-- Section -->
-                <section id="bookcaseSection">
-                     <header class="major">
-                         <h2>Bookcase </h2>
-                     </header>
-                        <!--Boookcase image and panel display-->
-                    <div id="bookImgMain" class="posts">
-                            <!--Img-->
-                        <div class="booksMedia accordionDisplay">
-                              <img src="images/books/js1.jpeg" class="pure-img-responsive"><i class="fa fa-times deleteBtn"></i></div>
-                            <!--Panel-->
-                        <div class="panel booksMedia" style=" display: none;">
-                            <div class="email-name">JavaScript: The Good Parts</div>
-                            <div class="email-desc">Douglas Crockford</div>
-                            <a href="https://play.google.com/store/books/details?id=PXa2bby0oQ0C&amp;source=gbs_api">Info</a></div>
-                        <!--Img-->
-                        <div class="booksMedia accordionDisplay">
-                            <img src="images/books/python1.jpeg" ><i class="fa fa-times deleteBtn"></i></div>
-                        <!--Panel-->
-                        <div class="panel booksMedia" style=" display: none;">
-                            <div class="book-name">Automate the Boring Stuff with Python</div>
-                            <div class="author-desc">Al Sweigart</div>
-                            <a href="http://books.google.com/books?id=8AcvDwAAQBAJ&amp;dq=python&amp;hl=&amp;source=gbs_api">Info</a></div>
-                        <!--Img-->
-                        <div class="booksMedia accordionDisplay active">
-                            <img src="images/books/react1.jpeg" ><i class="fa fa-times deleteBtn"></i></div>
-                        <!--Panel-->
-                        <div class="panel booksMedia" style="display: inline-grid">
-                            <div class="book-name">Learning React</div>
-                            <div class="author-desc">Alex Banks,Eve Porcello</div>
-                            <a href="https://play.google.com/store/books/details?id=pMTADgAAQBAJ&amp;source=gbs_api" style="border-bottom: none">Info</a></div>
-                        <!--Img-->
-                        <div class="booksMedia accordionDisplay">
-                            <img src="images/books/html1.jpeg"><i class="fa fa-times deleteBtn"></i></div>
-                        <!--Panel-->
-                        <div class="panel booksMedia" style=" display: none;">
-                            <div class="book-name" style="font-weight: bold">HTML and CSS</div>
-                            <div class="author-desc">Jon Duckett</div><a href="http://books.google.com/books?id=aGjaBTbT0o0C&amp;dq=coding&amp;hl=&amp;source=gbs_api" style="border-bottom: none">Info</a></div>
-                    </div>
-                </section>
-            </div>
-        </div>
+        <!-- Section -->
+        <section id="bookcaseSection">
+          <header class="major">
+            <h2>Bookcase </h2>
+          </header>
+          <!--Boookcase image and panel display-->
+          <div id="bookImgMain" class="posts">
 
-        <!-- Sidebar -->
-        <div id="sidebar">
-            <div class="inner">
-                <header class="major">
-                    <h2>Menu</h2>
-                </header>
-                <!-- Menu -->
-                <div id="searchbar" class="pure-control-group">
-                    <input type="text" placeholder="Search.." id="searchBooks" class="sideInput input" name="searchBooks">
-                    <button type="button" id="buttonForSearch"><i class="fa fa-search openBtn"></i></button>
-                </div>
-                <div id="list" class=" pure-u-md-1-3">
-                </div>
+
+            <div class="container booksMedia">
+              <img src="images/books/html1.jpeg" alt="Avatar" class="image" >
+              <i class="fa fa-times deleteBtn"></i>
+
+              <div class="overlay">
+                <div class="text"><div class="book-name" style="font-weight: bold">HTML and CSS</div>
+                <div class="author-desc">Jon Duckett</div><a href="http://books.google.com/books?id=aGjaBTbT0o0C&amp;dq=coding&amp;hl=&amp;source=gbs_api" style="border-bottom: none">Info</a></div>
+              </div>
             </div>
-        </div>
+
+
+
+            <div class="container booksMedia">
+              <img src="images/books/react1.jpeg" alt="Avatar" class="image" >
+              <div class="overlay">
+
+                <i class="fa fa-times deleteBtn"></i>
+
+
+                <div class="text"><div class="book-name">Learning React</div>
+                <div class="author-desc">Alex Banks,Eve Porcello</div>
+                <a href="https://play.google.com/store/books/details?id=pMTADgAAQBAJ&amp;source=gbs_api" style="border-bottom: none">Info</a></div>
+              </div>
+            </div>
+
+
+
+            <div class="container booksMedia">
+              <img src="images/books/book2.jpg" alt="Avatar" class="image" >
+              <div class="overlay">
+
+                <i class="fa fa-times deleteBtn"></i>
+
+
+                <div class="text"><div class="book-name" style="font-weight: bold">HTML and CSS</div>
+                <div class="author-desc">Jon Duckett</div><a href="http://books.google.com/books?id=aGjaBTbT0o0C&amp;dq=coding&amp;hl=&amp;source=gbs_api" style="border-bottom: none">Info</a></div>
+              </div>
+            </div>
+
+
+
+            <div class="container booksMedia">
+              <img src="images/books/python1.jpeg" alt="Avatar" class="image" >
+              <div class="overlay">
+
+                <i class="fa fa-times deleteBtn"></i>
+
+
+                <div class="text"><div class="book-name">Automate the Boring Stuff with Python</div>
+                <div class="author-desc">Al Sweigart</div>
+                <a href="http://books.google.com/books?id=8AcvDwAAQBAJ&amp;dq=python&amp;hl=&amp;source=gbs_api">Info</a></div>
+              </div>
+            </div>
+
+
+
+
+            <div class="container booksMedia">
+              <img src="images/books/js1.jpeg" alt="Avatar" class="image" >
+              <div class="overlay">
+
+                <i class="fa fa-times deleteBtn"></i>
+                <div class="text">
+                  <div class="book-name">JavaScript: The Good Parts</div>
+                  <div class="author-desc">Douglas Crockford</div>
+                  <a href="https://play.google.com/store/books/details?id=PXa2bby0oQ0C&amp;source=gbs_api">Info</a>
+              </div>
+
+
+              </div>
+            </div>
+
+            <div class="container booksMedia">
+              <img src="images/books/js1.jpg" alt="Avatar" class="image" >
+              <div class="overlay">
+
+                <i class="fa fa-times deleteBtn"></i>
+                <div class="text">
+                  <div class="book-name">JavaScript: The Good Parts</div>
+                  <div class="author-desc">Douglas Crockford</div>
+                  <a href="https://play.google.com/store/books/details?id=PXa2bby0oQ0C&amp;source=gbs_api">Info</a>
+              </div>
+
+
+              </div>
+            </div>
+
+            <!--Img-->
+            <!-- <div class="booksMedia accordionDisplay active">
+              <img src="images/books/react1.jpeg"><i class="fa fa-times deleteBtn"></i></div> -->
+            <!--Panel-->
+
+
+            <!-- <div class="panel booksMedia" style="display: inline-grid">
+              <div class="book-name">Learning React</div>
+              <div class="author-desc">Alex Banks,Eve Porcello</div>
+              <a href="https://play.google.com/store/books/details?id=pMTADgAAQBAJ&amp;source=gbs_api" style="border-bottom: none">Info</a>
+            </div> -->
+            <!--Img-->
+
+
+          </div>
+        </section>
+      </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/script.js"></script>
+    <!-- Sidebar -->
+    <div id="sidebar">
+      <div class="inner">
+        <header class="major">
+          <h2>Menu</h2>
+        </header>
+        <!-- Menu -->
+        <section id="search" class="alt">
+          <form method="" action="#">
+            <input type="text" name="" id="" placeholder="Search">
+          </form>
+        </section>
+        <div id="searchbar" class="pure-control-group">
+          <input type="text" placeholder="Search.." id="searchBooks" class="sideInput input" name="searchBooks">
+          <button type="button" id="buttonForSearch"><i class="fa fa-search openBtn"></i></button>
+        </div>
+        <div id="list" class=" pure-u-md-1-3">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/script.js"></script>
 
 </body>
 
