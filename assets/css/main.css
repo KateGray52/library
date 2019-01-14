@@ -594,7 +594,6 @@ button:disabled, .button:disabled {
   }
 }
 
-
 #sidebar {
   -moz-flex-grow: 0;
   -webkit-flex-grow: 0;
@@ -830,7 +829,6 @@ button:disabled, .button:disabled {
   text-align: right;
 }
 
-
 @media screen and (max-width: 736px) {
   #header {
     padding-top: 6.5em;
@@ -858,11 +856,13 @@ button:disabled, .button:disabled {
   #banner {
     padding: 1.5 !important;
   }
-  #banner .content p, ul{
-    display:  none;
+
+  #banner .content p, ul {
+    display: none;
   }
+
   #banner .content .actions {
-    display:  none;
+    display: none;
   }
 }
 
@@ -890,7 +890,6 @@ button:disabled, .button:disabled {
   flex-shrink: 1;
   width: 50%;
 }
-
 
 .infogroup {
   display: flex;
@@ -947,10 +946,14 @@ button:disabled, .button:disabled {
   width: 100%;
 }
 
-
-
 @media screen and (max-width: 480px) {
-#banner span {
-  display: none !important;
+  #banner span {
+    display: none !important;
+  }
 }
+
+@media screen and (min-width: 736px) {
+  .booksMedia {
+    margin: 10px;
+  }
 }

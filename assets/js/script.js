@@ -6,19 +6,19 @@ $( document ).ready( function () {
 		$( this ).closest( "div" ).remove();
 	} );
 
-	$( document ).on( 'click', '.accordionDisplay', function () {
-		var acc = $( this );
-		var i;
-		for ( i = 0; i < acc.length; i++ ) {
-			this.classList.toggle( "active" );
-			var panel = this.nextElementSibling;
-			if ( panel.style.display === "inline-grid" ) {
-				panel.style.display = "none";
-			} else {
-				panel.style.display = "inline-grid";
-			}
-		};
-	} );
+	// $( document ).on( 'click', '.accordionDisplay', function () {
+	// 	var acc = $( this );
+	// 	var i;
+	// 	for ( i = 0; i < acc.length; i++ ) {
+	// 		this.classList.toggle( "active" );
+	// 		var panel = this.nextElementSibling;
+	// 		if ( panel.style.display === "inline-grid" ) {
+	// 			panel.style.display = "none";
+	// 		} else {
+	// 			panel.style.display = "inline-grid";
+	// 		}
+	// 	};
+	// } );
 
 	//click on search input and highlights text
 	$( function () {
@@ -107,8 +107,6 @@ $( document ).ready( function () {
 
 				var overlayDiv = $( "<div></div>" )
 					.addClass( "overlay" );
-					// .append( clonedInfo )
-					// .appendTo( newDivImg );
 
 					var newTextDiv = $( "<div></div>" )
 						.addClass( "text" )
