@@ -99,14 +99,27 @@ $( document ).ready( function () {
 				var clonedImg = ( imgInDiv ).clone();
 				var clonedInfo = $( this ).siblings().clone();
 
-				var newPanelDiv = $( "<div></div>" )
-					.addClass( "panel booksMedia panel" )
-					.append( clonedInfo )
-					.prependTo( bookImgMainDiv );
+
+				// var newPanelDiv = $( "<div></div>" )
+				// 	.addClass( "panel booksMedia panel" )
+				// 	.append( clonedInfo )
+				// 	.prependTo( bookImgMainDiv );
+
+				var overlayDiv = $( "<div></div>" )
+					.addClass( "overlay" );
+					// .append( clonedInfo )
+					// .appendTo( newDivImg );
+
+					var newTextDiv = $( "<div></div>" )
+						.addClass( "text" )
+						.append( clonedInfo )
+						.appendTo( overlayDiv );
+
 
 				var newDivImg = $( "<div></div>" )
-					.addClass( "booksMedia accordionDisplay" )
-					.append( clonedImg );
+					.addClass( "booksMedia container" )
+					.append( clonedImg )
+					.append( overlayDiv );
 
 				var newDeleteIcon = $( "<i> </i>" )
 					.addClass( "fa fa-times deleteBtn" )
