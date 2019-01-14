@@ -851,12 +851,18 @@ button:disabled, .button:disabled {
 }
 
 @media screen and (max-width: 480px) {
-  #header {
-    display: none;
+  #header a {
+    display: none !important;
   }
 
   #banner {
     padding: 1.5 !important;
+  }
+  #banner .content p, ul{
+    display:  none;
+  }
+  #banner .content .actions {
+    display:  none;
   }
 }
 
