@@ -6,19 +6,6 @@ $( document ).ready( function () {
 		$( this ).closest( "div" ).remove();
 	} );
 
-	// $( document ).on( 'click', '.accordionDisplay', function () {
-	// 	var acc = $( this );
-	// 	var i;
-	// 	for ( i = 0; i < acc.length; i++ ) {
-	// 		this.classList.toggle( "active" );
-	// 		var panel = this.nextElementSibling;
-	// 		if ( panel.style.display === "inline-grid" ) {
-	// 			panel.style.display = "none";
-	// 		} else {
-	// 			panel.style.display = "inline-grid";
-	// 		}
-	// 	};
-	// } );
 
 	//click on search input and highlights text
 	$( function () {
@@ -79,6 +66,7 @@ $( document ).ready( function () {
 
 		var infolinkpara = $( "<a> </a>" )
 			.attr( "href", bookInfo )
+			.attr("target", "_blank")
 			.text( "Info" )
 			.appendTo( infoGroupDiv );
 
