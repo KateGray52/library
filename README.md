@@ -14,7 +14,7 @@ Use to keep track of books you own, make a list of books you want, keep track of
 
 ## Built With
 
-* [jQuery](https://jquery.com/) - Javascript
+* [jQuery](https://jquery.com/) - JavaScript
 * [Google Books Api](https://developers.google.com/books/) - API
 * [Html5](https://html5up.net/editorial) - Layout
 
