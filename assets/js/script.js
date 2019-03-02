@@ -2,7 +2,6 @@ $( document ).ready( function () {
 
 	$( document ).on( 'click', '.deleteBtn', function () {
 		var parentDivToRemove = $( this ).closest( "div" );
-		var panelSibling = parentDivToRemove.next( "div" ).remove();
 		$( this ).closest( "div" ).remove();
 	} );
 
@@ -86,12 +85,6 @@ $( document ).ready( function () {
 				var imgInDiv = $( this ).parent().siblings( '.img-div' ).children( 'img' );
 				var clonedImg = ( imgInDiv ).clone();
 				var clonedInfo = $( this ).siblings().clone();
-
-
-				// var newPanelDiv = $( "<div></div>" )
-				// 	.addClass( "panel booksMedia panel" )
-				// 	.append( clonedInfo )
-				// 	.prependTo( bookImgMainDiv );
 
 				var overlayDiv = $( "<div></div>" )
 					.addClass( "overlay" );
