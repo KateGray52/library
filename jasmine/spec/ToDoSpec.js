@@ -23,20 +23,13 @@ describe('Testing the functionality, this is the checklist', ()=>{
        todo.delete(2)
        expect(todo.getItems()[todo.getItems().length-1].id).toBe(1);
      })
-
      it('should mark item as complete', function(){
        todo.addTodo(item)
        todo.addTodo(item2)
        todo.complete(2)
       expect(todo.getItems().find(item => item.id == 2).complete).toBe(true);
     })
-
-
 })
-
-
-
-
 
 describe('Testing DOM manipulation', function(){
   let Dom, item, todo;
@@ -65,4 +58,18 @@ describe('Testing DOM manipulation', function(){
     result.innerText = item.title
     expect(element).toEqual(result)
   })
+  it('should trigger form and add item to todo array', function(){
+  const form = document.createElement('form');
+  form.innerHTML= `<input value="get milk" />
+    <button type="submit" />`;
+  document.body.appendChild(form)
+  const ul = document.createElement('ul');
+  Dom.addTodoEvent(
+    form,
+    todo.addTodo.bind(todo),
+    ul)
+  form.getElementsByTagName('button')[0].click();
+  document.body.removeChild(form)
+  expect(todo.todo[0].title).toEqual('get milk')
+})
 })
