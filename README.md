@@ -2,13 +2,13 @@
 > Search and add books to make a digital library of books you own.
 
 
-Uses Google Books API to search and select to add to the bookshelf. On the bookshelf hover over image to get more info, or click x to remove.
+Uses Google Books API to search and select to add book to the bookshelf. Hover over bookshelf image to get more info, or click x to remove.
 
 
 
 ## Usage example
 
-Use to keep track of books you own, make a list of books you want, keep track of loaned items, or get more information.
+Keep track of books you own, make a list of books you want, keep track of loaned items, or get more information.
 
 
 
