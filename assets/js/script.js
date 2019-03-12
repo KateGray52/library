@@ -105,7 +105,8 @@ $( document ).ready( function () {
 					.appendTo( newDivImg );
 
 				$( bookImgMainDiv ).prepend( newDivImg );
-
+				$(this).text("added");
+				$(this).addClass("add");
 			} )
 			.appendTo( infoGroupDiv );
 
