@@ -22,14 +22,12 @@ $(document).ready(function() {
     sendRquest(bookApiSearch)
   });
 
-
+  //Array to check if book is in display, add selected books to
   var ids = new Array();
   var hrefs = new Array();
   $('.text a').each(function() {
-    // ids.push($(this).attr('id'));
     hrefs.push($(this).attr('href'));
   });
-  // console.log(hrefs);
 
 
   //retrieve info from google books api
@@ -96,13 +94,11 @@ $(document).ready(function() {
         var bookImgMainDiv = document.getElementById('bookImgMain');
 
         var imgInDiv = $(this).parent().siblings('.img-div').children('img');
-        console.log(imgInDiv);
         var clonedImg = (imgInDiv).clone();
         var clonedInfo = $(this).siblings().clone();
 
         // var ids = new Array();
-
-        var unClonedA = ($(this).siblings("a").attr("href"));
+        var selectedHref = ($(this).siblings("a").attr("href"));
 
         var overlayDiv = $("<div></div>")
           .addClass("overlay");
@@ -126,18 +122,12 @@ $(document).ready(function() {
         $(this).text("Added");
         $(this).addClass("add");
 
-        // if (isClicked === "Select") {
-        //   $(bookImgMainDiv).prepend(newDivImg);
-        // } else {
-        //   alert("Already Added");
-        // }
-
-        if (hrefs.indexOf(unClonedA) > -1) {
+        if (hrefs.indexOf(selectedHref) > -1) {
           console.log("is in the array");
-					alert("Already in your Bookcase");
+          alert("Already in your Bookcase");
         } else {
           $(bookImgMainDiv).prepend(newDivImg);
-          hrefs.push(unClonedA);
+          hrefs.push(selectedHref);
           console.log("addddd ittt")
           console.log(hrefs.length);
         }
