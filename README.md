@@ -21,7 +21,7 @@ Keep track of books you own, make a list of books you want, keep track of loaned
 
 ## Author
 
-* [KateGray52](https://github.com/KateGray52)
+* [Kkote](https://github.com/kkote)
 
 ## License
 

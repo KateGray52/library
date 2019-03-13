@@ -96,6 +96,7 @@ $(document).ready(function() {
         var bookImgMainDiv = document.getElementById('bookImgMain');
 
         var imgInDiv = $(this).parent().siblings('.img-div').children('img');
+        console.log(imgInDiv);
         var clonedImg = (imgInDiv).clone();
         var clonedInfo = $(this).siblings().clone();
 
