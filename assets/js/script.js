@@ -58,36 +58,29 @@ $(document).ready(function() {
   //sidebar search results
   function addDiv(author, bookTitle, bookImg, index, bookCat, bookInfo) {
 
-    var infoGroupDiv = $("<div></div>")
-      .addClass("infogroup");
+    var infoGroupDiv = $("<div class='infogroup'></div>")
 
-    var bookpara = $("<div></div>")
-      .addClass("book-name")
+    var bookpara = $("<div class='book-name'></div>")
       .text(bookTitle)
       .appendTo(infoGroupDiv);
 
-    var authorpara = $("<div></div>")
-      .addClass("author-desc")
+    var authorpara = $("<div class='author-desc'></div>")
       .text(author)
       .appendTo(infoGroupDiv);
 
-    var infolinkpara = $("<a> </a>")
+    var infolinkpara = $("<a> Info</a>")
       .attr("href", bookInfo)
       .attr("target", "_blank")
-      .text("Info")
       .appendTo(infoGroupDiv);
 
     var img = $('<img >')
       .attr('src', bookImg);
 
-    var imgDiv = $("<div></div>");
-    imgDiv.addClass("img-div");
+    var imgDiv = $("<div class='img-div'></div>");
     imgDiv.append(img);
 
     //create select button to add to bookcase display, with functions for delete and get info
-    var newSelectBtn = $("<button></button>")
-      .addClass("button small")
-      .text("Select")
+    var newSelectBtn = $("<button class='button small'>Select</button>")
       .click(function() {
 
         var isClicked = $(this).text();
@@ -100,22 +93,17 @@ $(document).ready(function() {
         // var ids = new Array();
         var selectedHref = ($(this).siblings("a").attr("href"));
 
-        var overlayDiv = $("<div></div>")
-          .addClass("overlay");
+        var overlayDiv = $("<div class='overlay'></div>");
 
-        var newTextDiv = $("<div></div>")
-          .addClass("text")
+        var newTextDiv = $("<div class='text'></div>")
           .append(clonedInfo)
           .appendTo(overlayDiv);
 
-
-        var newDivImg = $("<div></div>")
-          .addClass("booksMedia container")
+        var newDivImg = $("<div class='booksMedia container'></div>")
           .append(clonedImg)
           .append(overlayDiv);
 
-        var newDeleteIcon = $("<i> </i>")
-          .addClass("fa fa-times deleteBtn")
+        var newDeleteIcon = $("<i class='fa fa-times deleteBtn'> </i>")
           .appendTo(newDivImg);
 
 
@@ -139,8 +127,7 @@ $(document).ready(function() {
 
 
     var ListRef = document.getElementById('list');
-    var newDivWrapper = $("<div></div>")
-      .addClass("infowrapper")
+    var newDivWrapper = $("<div class='infowrapper'></div>")
       .append(imgDiv, infoGroupDiv)
       .appendTo(ListRef);
 
