@@ -60,15 +60,15 @@ $(document).ready(function() {
 
     var infoGroupDiv = $("<div class='infogroup'></div>")
 
-    var bookpara = $("<div class='book-name'></div>")
+    var titleDiv = $("<div class='book-name'></div>")
       .text(bookTitle)
       .appendTo(infoGroupDiv);
 
-    var authorpara = $("<div class='author-desc'></div>")
+    var authorDiv = $("<div class='author-desc'></div>")
       .text(author)
       .appendTo(infoGroupDiv);
 
-    var infolinkpara = $("<a> Info</a>")
+    var infoLinkDiv = $("<a> Info</a>")
       .attr("href", bookInfo)
       .attr("target", "_blank")
       .appendTo(infoGroupDiv);
